@@ -1,0 +1,6 @@
+{
+  "name": "Kothari Group India",
+  "description": "Leading manufacturer of Plumbing Pipes & Fittings, Agri Pipes & Fittings, and Micro Irrigation Systems in India.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
