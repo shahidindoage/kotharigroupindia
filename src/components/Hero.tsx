@@ -48,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       const img = new Image();
       const idx = String(i).padStart(3, '0');
-      img.src = `/assets/frames/ezgif-frame-${idx}.jpg`;
+      img.src = `/frames/ezgif-frame-${idx}.jpg`;
       img.onload = img.onerror = () => {
         if (img.complete && img.naturalWidth > 0) {
           loadedCount++;
