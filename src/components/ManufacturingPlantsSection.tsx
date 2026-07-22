@@ -6,32 +6,32 @@ export const ManufacturingPlantsSection: React.FC = () => {
 
   const plantImages = [
     {
-      src: '/src/assets/images/plant_aerial_view_1784717955067.jpg',
-      fallbackSrc: '/src/assets/images/plant_aerial_view_1784719755067.jpg',
+      src: '/plant_aerial_view_1784717955067.jpg',
+      fallbackSrc: '/plant_aerial_view_1784719755067.jpg',
       title: 'State-of-the-Art Plant Complex',
       location: 'Main Manufacturing Division, Maharashtra',
       capacity: '85,000 MT Annual Capacity',
       description: 'Solar-powered smart manufacturing park housing high-speed twin-screw extrusion lines for UPVC and CPVC pipes.'
     },
     {
-      src: '/src/assets/images/plant_extrusion_line_1784717917817.jpg',
-      fallbackSrc: '/src/assets/images/plant_extrusion_line_1784719717817.jpg',
+      src: 'plant_extrusion_line_1784717917817.jpg',
+      fallbackSrc: 'plant_extrusion_line_1784719717817.jpg',
       title: 'Automated Pipe Extrusion Lines',
       location: 'Advanced Polymer Extrusion Bay',
       capacity: 'Continuous 24x7 Operations',
       description: 'Laser-guided wall thickness control ensuring uniform hydrostatic burst resistance across all pressure classes.'
     },
     {
-      src: '/src/assets/images/plant_quality_lab_1784717942717.jpg',
-      fallbackSrc: '/src/assets/images/plant_quality_lab_1784719742717.jpg',
+      src: 'plant_quality_lab_1784717942717.jpg',
+      fallbackSrc: 'plant_quality_lab_1784719742717.jpg',
       title: 'BIS & ISO Certified Quality Testing Lab',
       location: 'NABL Accredited Quality Division',
       capacity: '100% Hydrostatic Inspection',
       description: 'Internal pressure testing, drop impact rigs, thermal stability baths, and raw material purity spectrometers.'
     },
     {
-      src: '/src/assets/images/plant_warehouse_storage_1784717930647.jpg',
-      fallbackSrc: '/src/assets/images/plant_warehouse_storage_1784719730647.jpg',
+      src: 'plant_warehouse_storage_1784717930647.jpg',
+      fallbackSrc: 'plant_warehouse_storage_1784719730647.jpg',
       title: 'Central Logistics Yard & Warehouse',
       location: 'Pan-India Distribution Hub',
       capacity: 'Rapid Dispatch to 23+ States',
