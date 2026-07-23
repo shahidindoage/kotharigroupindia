@@ -27,7 +27,36 @@ export const productsData: ProductItem[] = [
     applications: ['Residential Apartments', 'Independent Villas', 'Hospitals & Hotels', 'Commercial Plumbing'],
     image: 'https://kotharigroupindia.com/img/images/Irrigation_products.webp',
     cadAvailable: true,
-    featured: true
+    featured: true,
+    divisionName: 'Plumbing Division',
+    subCategory: 'CPVC Systems',
+    composition: 'Manufactured from premium Chlorinated Polyvinyl Chloride (CPVC) compound with advanced molecular chlorination technology, ensuring 100% lead-free potable water transport.',
+    manufacturingStandard: 'IS 15778:2013 / ASTM F441',
+    pipeStandardsTable: [
+      { sizeRange: 'SN 2 - 160 to 315', standard: 'IS : 15328 : 2003', endConnection: 'Elastomeric Sealing Ring & Solvent Joint' },
+      { sizeRange: 'SN 4 - 125 to 250', standard: 'IS : 15328 : 2003', endConnection: 'Elastomeric Sealing Ring & Solvent Joint' },
+      { sizeRange: 'SN 8 - 110 to 250', standard: 'IS : 15328 : 2003', endConnection: 'Elastomeric Sealing Ring & Solvent Joint' },
+
+    ],
+    dimensionsTable: [
+  { size: 63, minOuterDia: 63.00, maxOuterDia: 63.30, sn2Min: '-', sn2Max: '-', sn4Min: '-', sn4Max: '-', sn8Min: 2.70, sn8Max: 3.10 },
+  { size: 75, minOuterDia: 75.00, maxOuterDia: 75.30, sn2Min: '-', sn2Max: '-', sn4Min: '-', sn4Max: '-', sn8Min: 2.80, sn8Max: 3.30 },
+  { size: 90, minOuterDia: 90.00, maxOuterDia: 90.30, sn2Min: '-', sn2Max: '-', sn4Min: '-', sn4Max: '-', sn8Min: 2.90, sn8Max: 3.40 },
+  { size: 110, minOuterDia: 110.00, maxOuterDia: 110.40, sn2Min: '-', sn2Max: '-', sn4Min: '-', sn4Max: '-', sn8Min: 3.20, sn8Max: 3.70 },
+  { size: 125, minOuterDia: 125.00, maxOuterDia: 125.40, sn2Min: '-', sn2Max: '-', sn4Min: 3.20, sn4Max: 3.70, sn8Min: 3.70, sn8Max: 4.40 },
+  { size: 160, minOuterDia: 160.00, maxOuterDia: 160.50, sn2Min: 3.20, sn2Max: 3.70, sn4Min: 4.00, sn4Max: 4.60, sn8Min: 4.70, sn8Max: 5.40 },
+  { size: 200, minOuterDia: 200.00, maxOuterDia: 200.60, sn2Min: 3.90, sn2Max: 4.50, sn4Min: 4.90, sn4Max: 5.60, sn8Min: 5.90, sn8Max: 6.70 },
+  { size: 250, minOuterDia: 250.00, maxOuterDia: 250.80, sn2Min: 4.90, sn2Max: 5.60, sn4Min: 6.20, sn4Max: 7.00, sn8Min: 7.30, sn8Max: 8.30 },
+  { size: 315, minOuterDia: 315.00, maxOuterDia: 316.00, sn2Min: 6.20, sn2Max: 7.00, sn4Min: 7.70, sn4Max: 8.70, sn8Min: 9.20, sn8Max: 10.40 },
+  { size: 400, minOuterDia: 400.00, maxOuterDia: 401.20, sn2Min: 7.90, sn2Max: 8.90, sn4Min: 9.80, sn4Max: 11.00, sn8Min: 11.70, sn8Max: 13.10 }
+],
+    fittingsList: [
+      { id: 'cpvc-coupler', name: 'CPVC Coupler Socket', sizes: '15mm - 50mm', image: 'https://kotharigroupindia.com/img/images/Irrigation_products.webp' },
+      { id: 'cpvc-elbow', name: 'CPVC Elbow 90°', sizes: '15mm - 50mm', image: 'https://kotharigroupindia.com/img/images/Irrigation_products.webp' },
+      { id: 'cpvc-tee', name: 'CPVC Equal Tee', sizes: '15mm - 50mm', image: 'https://kotharigroupindia.com/img/images/Irrigation_products.webp' },
+      { id: 'cpvc-reducer', name: 'CPVC Reducer Bush', sizes: '20mm x 15mm - 50mm x 40mm', image: 'https://kotharigroupindia.com/img/images/Irrigation_products.webp' },
+      { id: 'cpvc-ball-valve', name: 'CPVC Ball Valve', sizes: '15mm - 50mm', image: 'https://kotharigroupindia.com/img/images/Irrigation_products.webp' }
+    ]
   },
   {
     id: 'prod-kothari-upvc-plumb',

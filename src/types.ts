@@ -21,6 +21,37 @@ export interface ProductSpec {
   certifications: string[];
 }
 
+export interface DimensionRow {
+  size: number;
+  minOuterDia: number;
+  maxOuterDia: number;
+  sn2Min: number;
+  sn2Max: number;
+  sn4Min: number;
+  sn4Max: number;
+  sn8Min: number;
+  sn8Max: number;
+}
+
+export interface PipeStandardRow {
+  sizeRange: string;
+  standard: string;
+  endConnection: string;
+}
+
+export interface FittingItem {
+  id?: string;
+  name: string;
+  sizes?: string;
+  description?: string;
+  image?: string;
+}
+
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 export interface ProductItem {
   id: string;
   name: string;
@@ -33,6 +64,15 @@ export interface ProductItem {
   image: string;
   cadAvailable: boolean;
   featured?: boolean;
+  divisionName?: string;
+  subCategory?: string;
+  composition?: string;
+  manufacturingStandard?: string;
+  pipeStandardsTable?: PipeStandardRow[];
+  dimensionsTable?: DimensionRow[];
+  fittingsList?: FittingItem[];
+  faqs?: FAQItem[];
+  brochureName?: string;
 }
 
 export interface CaseStudy {

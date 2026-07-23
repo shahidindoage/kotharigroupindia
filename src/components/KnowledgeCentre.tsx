@@ -80,10 +80,10 @@ export const KnowledgeCentre: React.FC = () => {
             {/* <span className="bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
               Technical Resources & Specs
             </span> */}
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1575B3]">
+            <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
               Knowledge Centre
             </h2>
-            <p className="text-sm font-bold text-[#5F6B7A]">
+            <p className="text-sm font-light text-[#5F6B7A]">
               Access engineering documentation, installation guidelines, dimension matrices, and field manuals for Kothari systems.
             </p>
           </div>
@@ -92,7 +92,7 @@ export const KnowledgeCentre: React.FC = () => {
           <div className="flex flex-wrap items-center gap-1.5 bg-[#F5FAFF] p-1.5 rounded-2xl border border-[#DCEAF5] shrink-0">
             <button
               onClick={() => setActiveTab('Plumbing Pipes And Fittings')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
                 activeTab === 'Plumbing Pipes And Fittings'
                   ? 'bg-[#1575B3] text-white shadow-sm'
                   : 'text-[#5F6B7A] hover:text-[#1575B3]'
@@ -104,7 +104,7 @@ export const KnowledgeCentre: React.FC = () => {
 
             <button
               onClick={() => setActiveTab('Agri Pipes And Fittings')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
                 activeTab === 'Agri Pipes And Fittings'
                   ? 'bg-[#1575B3] text-white shadow-sm'
                   : 'text-[#5F6B7A] hover:text-[#1575B3]'
@@ -116,7 +116,7 @@ export const KnowledgeCentre: React.FC = () => {
 
             <button
               onClick={() => setActiveTab('Micro Irrigation System')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
                 activeTab === 'Micro Irrigation System'
                   ? 'bg-[#1575B3] text-white shadow-sm'
                   : 'text-[#5F6B7A] hover:text-[#1575B3]'
@@ -134,27 +134,27 @@ export const KnowledgeCentre: React.FC = () => {
           {/* Left Text & Manual Downloads */}
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-2">
-              <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#1575B3] bg-white border border-[#DCEAF5] px-2.5 py-0.5 rounded-full">
+              {/* <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#1575B3] bg-white border border-[#DCEAF5] px-2.5 py-0.5 rounded-full">
                 {activeTab}
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#1575B3]">
+              </span> */}
+              <h3 className="text-2xl sm:text-3xl font-medium text-[#1575B3]">
                 {currentContent.title}
               </h3>
-              <p className="text-xs sm:text-sm font-bold text-[#5F6B7A]">
+              <p className="text-xs sm:text-sm font-light text-[#5F6B7A]">
                 {currentContent.subtitle}
               </p>
             </div>
 
-            <p className="text-xs sm:text-sm font-bold text-[#111111] leading-relaxed">
+            <p className="text-xs sm:text-sm font-medium text-[#111111] leading-relaxed">
               {currentContent.description}
             </p>
 
             {/* Technical Highlights Checklist */}
             <div className="space-y-2">
-              <h4 className="text-xs font-extrabold  tracking-wider text-[#1575B3]">
+              <h4 className="text-xs font-medium  tracking-wider text-[#1575B3]">
                 Technical Parameters
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-bold">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-light">
                 {currentContent.keySpecs.map((spec, idx) => (
                   <div key={idx} className="flex items-start gap-2 bg-white p-3 rounded-xl border border-[#DCEAF5]">
                     <CheckCircle2 className="w-4 h-4 text-[#1575B3] shrink-0 mt-0.5" />
@@ -166,12 +166,12 @@ export const KnowledgeCentre: React.FC = () => {
 
             {/* Downloadable Guides */}
             <div className="space-y-2 pt-2">
-              <h4 className="text-xs font-extrabold  tracking-wider text-[#1575B3]">
+              <h4 className="text-xs font-medium tracking-wider text-[#1575B3]">
                 Download Technical Bulletins & CAD Data
               </h4>
               <div className="space-y-2">
                 {currentContent.guides.map((g, i) => (
-                  <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-white border border-[#DCEAF5] text-xs font-bold text-[#111111]">
+                  <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-white border border-[#DCEAF5] text-xs font-light text-[#111111]">
                     <div className="flex items-center gap-2">
                       <FileText className="w-4 h-4 text-[#1575B3]" />
                       <span>{g.name}</span>
@@ -198,7 +198,7 @@ export const KnowledgeCentre: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1575B3]/40 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-[#DCEAF5] text-xs font-bold text-[#1575B3]">
+                <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-[#DCEAF5] text-xs font-medium text-[#1575B3]">
                   Kothari Certified Engineering Documentation
                 </div>
               </div>

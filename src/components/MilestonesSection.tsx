@@ -56,10 +56,10 @@ export const MilestonesSection: React.FC = () => {
           {/* <span className="bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-2xs">
             Our Journey & Growth
           </span> */}
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1575B3]">
+          <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
            Company Milestones
           </h2>
-          <p className="text-sm font-bold text-[#5F6B7A]">
+          <p className="text-sm font-light text-[#5F6B7A]">
             Over 35 years of continuous innovation, expansion, and commitment to transforming India’s water management ecosystem.
           </p>
         </div>
@@ -79,7 +79,7 @@ export const MilestonesSection: React.FC = () => {
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl sm:text-3xl font-extrabold text-[#1575B3] bg-white px-3 py-1 rounded-xl border border-[#DCEAF5]">
+                      <span className="text-2xl sm:text-3xl font-medium text-[#1575B3] bg-white px-3 py-1 rounded-xl border border-[#DCEAF5]">
                         {m.year}
                       </span>
                       {/* <div className="w-10 h-10 rounded-xl bg-[#1575B3] text-white flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
@@ -87,16 +87,16 @@ export const MilestonesSection: React.FC = () => {
                       </div> */}
                     </div>
 
-                    <h3 className="text-lg font-extrabold text-[#111111]">
+                    <h3 className="text-lg font-medium text-[#111111]">
                       {m.title}
                     </h3>
 
-                    <p className="text-xs font-bold text-[#5F6B7A] leading-relaxed">
+                    <p className="text-xs font-light text-[#5F6B7A] leading-relaxed">
                       {m.description}
                     </p>
                   </div>
 
-                  <div className="pt-3 border-t border-[#DCEAF5] flex items-center justify-between text-[11px] font-extrabold text-[#1575B3]">
+                  <div className="pt-3 border-t border-[#DCEAF5] flex items-center justify-between text-[11px] font-medium text-[#1575B3]">
                     <span className="bg-white border border-[#DCEAF5] px-2.5 py-1 rounded-lg">
                       {m.highlight}
                     </span>

@@ -21,6 +21,8 @@ import { CareerModal } from './components/CareerModal';
 import { Footer } from './components/Footer';
 import { productsData } from './data/products';
 import { ProductItem } from './types';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ProductDetailPage } from './pages/ProductDetailPage';
 
 
 export default function App() {
@@ -55,6 +57,8 @@ export default function App() {
   };
 
   return (
+
+     <BrowserRouter>
     <div className="min-h-screen bg-[#F5FAFF] text-[#111111] font-['Outfit',sans-serif] flex flex-col antialiased">
       
       {loading && (
@@ -94,8 +98,14 @@ export default function App() {
       />
 
       {/* Main Page Layout */}
-      <main className="flex-1 w-full">
-        
+      <main className="flex-1">
+          <Routes>
+            {/* Home Page Route */}
+            <Route
+              path="/"
+              element={
+                <>
+                   
         {/* 1. Hero Section */}
         <Hero
           onExploreProducts={() => handleScrollToSection('categories')}
@@ -143,19 +153,18 @@ export default function App() {
 
         {/* 8. Latest Blog Posts Section */}
         <LatestBlogPosts />
+                </>
+              }
+            />
 
-        {/* Interactive Hydraulic Tools & Quality Verification */}
-        {/* <PipeFlowCalculator /> */}
+            {/* Catalog Page Route */}
+            {/* <Route path="/products" element={<CatalogPage />} /> */}
 
-        {/* <MaterialComparisonTable
-          onOpenQuoteModal={() => setQuoteModalOpen(true)}
-        /> */}
-
-        {/* <QualityAndManufacturing /> */}
-
-        {/* <CertificationsAndTrust /> */}
-
-      </main>
+            {/* Dynamic & Direct Product Detail Page Routes */}
+            <Route path="/product/:id" element={<ProductDetailPage />} />
+            <Route path="/product" element={<ProductDetailPage />} />
+          </Routes>
+        </main>
 
       {/* Footer */}
       <Footer
@@ -194,5 +203,6 @@ export default function App() {
       />
 
     </div>
+    </BrowserRouter>
   );
 }

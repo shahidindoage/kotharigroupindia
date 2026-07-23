@@ -69,11 +69,11 @@ export const HighlightedPoints: React.FC = () => {
                   </div> */}
                 </div>
 
-                <h3 className="text-sm font-extrabold text-white">
+                <h3 className="text-sm font-medium text-white">
                   {st.label}
                 </h3>
 
-                <p className="text-xs font-medium text-white/80 leading-relaxed">
+                <p className="text-xs font-light text-white/80 leading-relaxed">
                   {st.description}
                 </p>
               </div>

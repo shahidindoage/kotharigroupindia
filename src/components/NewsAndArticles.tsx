@@ -34,10 +34,10 @@ export const NewsAndArticles: React.FC = () => {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#DCEAF5]">
           <div className="space-y-2">
           
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1575B3]">
+            <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
               News & Articles
             </h2>
-            <p className="text-sm font-bold text-[#5F6B7A]">
+            <p className="text-sm font-light text-[#5F6B7A]">
               Stay informed with latest Kothari Group press releases, factory expansions, and industry recognitions.
             </p>
           </div>
@@ -60,7 +60,7 @@ export const NewsAndArticles: React.FC = () => {
                   />
                 </div>
 
-                <div className="flex items-center justify-between text-[11px] font-bold text-[#5F6B7A]">
+                <div className="flex items-center justify-between text-[11px] font-medium text-[#5F6B7A]">
                   <span className="bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] px-2.5 py-0.5 rounded-full">
                     {item.category}
                   </span>
@@ -70,17 +70,17 @@ export const NewsAndArticles: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="text-base font-extrabold text-[#1575B3] line-clamp-2">
+                <h3 className="text-base font-medium text-[#1575B3] line-clamp-2">
                   {item.title}
                 </h3>
 
-                <p className="text-xs font-bold text-[#5F6B7A] leading-relaxed line-clamp-3">
+                <p className="text-xs font-light text-[#5F6B7A] leading-relaxed line-clamp-3">
                   {item.snippet}
                 </p>
               </div>
 
               <div className="pt-4 mt-4 border-t border-[#DCEAF5]">
-                <button className="text-xs font-bold text-[#1575B3] hover:underline flex items-center gap-1">
+                <button className="text-xs font-medium text-[#1575B3] hover:underline flex items-center gap-1">
                   <span>Read Full Article</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>

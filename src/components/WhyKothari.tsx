@@ -51,11 +51,11 @@ export const WhyKothari: React.FC = () => {
           {/* <span className="bg-[#FFFFFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-2xs">
             Why Choose Kothari Group?
           </span> */}
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1575B3]">
+          <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
           What makes
 us unique?
           </h2>
-          <p className="text-sm font-bold text-[#5F6B7A]">
+          <p className="text-sm font-light text-[#5F6B7A]">
             Discover why millions of farmers, engineers, real estate developers, and infrastructure leads rely on Kothari Group for water piping & micro irrigation excellence.
           </p>
         </div>
@@ -74,11 +74,11 @@ us unique?
                     <IconComponent className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-lg font-extrabold text-[#1575B3]">
+                  <h3 className="text-lg font-medium text-[#1575B3]">
                     {pt.title}
                   </h3>
 
-                  <p className="text-xs font-bold text-[#111111] leading-relaxed">
+                  <p className="text-xs font-light text-[#111111] leading-relaxed">
                     {pt.description}
                   </p>
                 </div>

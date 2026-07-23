@@ -49,10 +49,10 @@ export const ManufacturingPlantsSection: React.FC = () => {
             {/* <span className="bg-[#FFFFFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-2xs">
               Infrastructure & Production
             </span> */}
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1575B3]">
+            <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
              Manufacturing Plants
             </h2>
-            <p className="text-sm font-bold text-[#5F6B7A]">
+            <p className="text-sm font-light text-[#5F6B7A]">
               Visual tour of Kothari Group’s advanced pipe extrusion facilities, quality testing laboratories, and centralized distribution hubs.
             </p>
           </div>
@@ -76,7 +76,7 @@ export const ManufacturingPlantsSection: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 
                 <div className="absolute top-4 left-4">
-                  <span className="bg-[#FFFFFF]/90 backdrop-blur-md text-[#1575B3] text-xs font-extrabold px-3 py-1 rounded-full border border-[#DCEAF5] flex items-center gap-1.5 shadow-xs">
+                  <span className="bg-[#FFFFFF]/90 backdrop-blur-md text-[#1575B3] text-xs font-medium px-3 py-1 rounded-full border border-[#DCEAF5] flex items-center gap-1.5 shadow-xs">
                     <MapPin className="w-3.5 h-3.5" />
                     {img.location}
                   </span>
@@ -89,7 +89,7 @@ export const ManufacturingPlantsSection: React.FC = () => {
                 </div>
 
                 <div className="absolute bottom-4 left-4 right-4 text-white space-y-1">
-                  <h3 className="text-lg sm:text-xl font-extrabold drop-shadow-sm">
+                  <h3 className="text-lg sm:text-xl font-medium drop-shadow-sm">
                     {img.title}
                   </h3>
                   <div className="flex items-center gap-2 text-xs font-bold text-white/90">

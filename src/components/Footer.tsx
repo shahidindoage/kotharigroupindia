@@ -44,13 +44,13 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Top Newsletter & Technical Bulletin CTA Box */}
         <div className="bg-[#F5FAFF] rounded-3xl border border-[#DCEAF5] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-1.5 max-w-xl">
-            <span className="bg-[#1575B3] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+            {/* <span className="bg-[#1575B3] text-white text-[10px] font-medium uppercase tracking-wider px-2.5 py-0.5 rounded-full">
               Kothari Technical Bulletin
-            </span>
-            <h3 className="text-xl sm:text-2xl font-extrabold text-[#1575B3]">
+            </span> */}
+            <h3 className="text-xl sm:text-2xl font-medium text-[#1575B3]">
               Subscribe To Water Management & Drip Irrigation Updates
             </h3>
-            <p className="text-xs font-bold text-[#5F6B7A]">
+            <p className="text-xs font-light text-[#5F6B7A]">
               Receive quarterly technical bulletins on Micro Irrigation Drip Spacing, CPVC Plumbing Standards, and Agri Pipe Specifications across India.
             </p>
           </div>
@@ -62,11 +62,11 @@ export const Footer: React.FC<FooterProps> = ({
               placeholder="Enter your email address..."
               value={newsletterEmail}
               onChange={(e) => setNewsletterEmail(e.target.value)}
-              className="px-4 py-3 bg-[#FFFFFF] border border-[#DCEAF5] rounded-xl text-xs font-bold text-[#111111] placeholder-[#5F6B7A] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30 w-full lg:w-64"
+              className="px-4 py-3 bg-[#FFFFFF] border border-[#DCEAF5] rounded-xl text-xs font-light text-[#111111] placeholder-[#5F6B7A] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30 w-full lg:w-64"
             />
             <button
               type="submit"
-              className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-3 rounded-xl font-bold text-xs shadow-sm transition shrink-0"
+              className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-3 rounded-xl font-medium text-xs shadow-sm transition shrink-0"
             >
               {subscribed ? 'Subscribed!' : 'Subscribe'}
             </button>
@@ -93,11 +93,11 @@ export const Footer: React.FC<FooterProps> = ({
               </div>
             </div>
 
-            <p className="text-xs font-bold text-[#5F6B7A] leading-relaxed max-w-sm">
+            <p className="text-xs font-light text-[#5F6B7A] leading-relaxed max-w-sm">
               India's trusted leader with over 35 years of excellence in Plumbing Pipes & Fittings, Agri Pipes & Fittings, and Micro Irrigation Systems.
             </p>
 
-            <div className="space-y-2 text-xs font-bold text-[#5F6B7A]">
+            <div className="space-y-2 text-xs font-light text-[#5F6B7A]">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#1575B3]" />
                 <span>Corporate HQ: Kothari House, Industrial Zone, Maharashtra, India</span>
@@ -115,10 +115,10 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 1: Product Segments */}
           <div className="space-y-3 text-xs">
-            <h4 className="font-extrabold text-[#1575B3] text-sm">
+            <h4 className="font-medium text-[#1575B3] text-sm">
               Core Segments
             </h4>
-            <ul className="space-y-2 font-bold text-[#5F6B7A]">
+            <ul className="space-y-2 font-light text-[#5F6B7A]">
               <li>
                 <button onClick={() => onSelectSection('categories')} className="hover:text-[#1575B3] transition">
                   Plumbing Pipes & fittings
@@ -149,10 +149,10 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 2: Quick Links */}
           <div className="space-y-3 text-xs">
-            <h4 className="font-extrabold text-[#1575B3] text-sm">
+            <h4 className="font-medium text-[#1575B3] text-sm">
               Quick Links
             </h4>
-            <ul className="space-y-2 font-bold text-[#5F6B7A]">
+            <ul className="space-y-2 font-light text-[#5F6B7A]">
               <li>
                 <button onClick={() => onSelectSection('hero')} className="hover:text-[#1575B3] transition">
                   Home
@@ -183,10 +183,10 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 3: Quality & Compliance */}
           <div className="space-y-3 text-xs">
-            <h4 className="font-extrabold text-[#1575B3] text-sm">
+            <h4 className="font-medium text-[#1575B3] text-sm">
               Certifications
             </h4>
-            <ul className="space-y-2 font-bold text-[#5F6B7A]">
+            <ul className="space-y-2 font-light text-[#5F6B7A]">
               <li className="flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#1575B3]" />
                 <span>ISO 9001 Quality System</span>
@@ -213,7 +213,7 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[#DCEAF5] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-bold text-[#5F6B7A]">
+        <div className="pt-8 border-t border-[#DCEAF5] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-light text-[#5F6B7A]">
           <p>
             © 2026 Kothari Group India. All Rights Reserved. Empowering Water Management Across 23+ States.
           </p>
@@ -222,7 +222,7 @@ export const Footer: React.FC<FooterProps> = ({
             <button onClick={() => onSelectSection('why-kothari')} className="hover:text-[#1575B3] transition">
               Quality Assurance Policy
             </button>
-            <button onClick={onOpenQuoteModal} className="text-[#1575B3] font-extrabold hover:underline">
+            <button onClick={onOpenQuoteModal} className="text-[#1575B3] font-medium hover:underline">
               Get Quotation
             </button>
           </div>

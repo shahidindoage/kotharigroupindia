@@ -15,6 +15,7 @@ import {
   Info,
   Package
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   onOpenQuoteModal: () => void;
@@ -38,12 +39,12 @@ export const Header: React.FC<HeaderProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'why-kothari', label: 'About' },
-    { id: 'categories', label: 'Products' },
-    { id: 'knowledge-centre', label: 'Resources' },
-    { id: 'career', label: 'Career' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'hero', label: 'Home',url:'' },
+    { id: 'why-kothari', label: 'About',url:'/' },
+    { id: 'categories', label: 'Product',url:'/product/upvc-underground-drainage' },
+    { id: 'knowledge-centre', label: 'Resources',url:'/' },
+    { id: 'career', label: 'Career',url:'/' },
+    { id: 'contact', label: 'Contact',url:'/' }
   ];
 
   const handleNavClick = (id: string) => {
@@ -102,7 +103,7 @@ export const Header: React.FC<HeaderProps> = ({
           onClick={() => handleNavClick('hero')}
           className="flex items-center gap-3 cursor-pointer group"
         >
-          <div className="h-18 flex items-center justify-center">
+          <Link to="/" className="h-18 flex items-center justify-center">
             <img 
               src="https://kotharigroupindia.com/img/Kothariblue_logo.png" 
               alt="Kothari Group Logo" 
@@ -114,7 +115,7 @@ export const Header: React.FC<HeaderProps> = ({
               }}
             />
          
-          </div>
+          </Link>
         </div>
 
         {/* Desktop Navigation Links */}
@@ -122,17 +123,18 @@ export const Header: React.FC<HeaderProps> = ({
           {navItems.map((item) => {
             const isActive = activeSection === item.id;
             return (
-              <button
+              <Link
+              to={item.url}
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`px-3.5 py-2 rounded-lg text-lg font-bold transition-all duration-200 ${
+                className={`px-3.5 py-2 rounded-lg text-lg font-light transition-all duration-200 ${
                   isActive 
                     ? 'text-[#1575B3] ' 
                     : 'text-[#5F6B7A] hover:text-[#1575B3] hover:bg-[#F5FAFF]/60'
                 }`}
               >
                 {item.label}
-              </button>
+              </Link>
             );
           })}
         </nav>
@@ -148,7 +150,7 @@ export const Header: React.FC<HeaderProps> = ({
                 placeholder="Search Pipes, Drip, Fittings..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-9 pr-4 py-2 bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl text-xs font-semibold text-[#111111] placeholder-[#5F6B7A] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30 focus:bg-white w-44 xl:w-52 transition-all"
+                className="pl-9 pr-4 py-2 bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl text-xs font-light text-[#111111] placeholder-[#5F6B7A] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30 focus:bg-white w-44 xl:w-52 transition-all"
               />
             </div>
           </div>
@@ -156,7 +158,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Request Quote Button */}
           <button
             onClick={onOpenQuoteModal}
-            className="flex items-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] text-white px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-md shadow-[#1575B3]/15 hover:shadow-lg transition-all transform active:scale-98"
+            className="flex items-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] text-white px-4 py-2.5 rounded-xl font-medium text-xs sm:text-sm shadow-md shadow-[#1575B3]/15 hover:shadow-lg transition-all transform active:scale-98"
           >
             <FileText className="w-4 h-4" />
             <span>Get Quotation</span>

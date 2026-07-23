@@ -36,10 +36,10 @@ export const Testimonials: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2">
          
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1575B3]">
+          <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
             Testimonials
           </h2>
-          <p className="text-sm font-bold text-[#5F6B7A]">
+          <p className="text-sm font-light text-[#5F6B7A]">
             Read how farmers, MEP engineers, and regional dealers describe their experience with Kothari products.
           </p>
         </div>
@@ -58,30 +58,30 @@ export const Testimonials: React.FC = () => {
                       <Star key={i} className="w-4 h-4 fill-amber-400" />
                     ))}
                   </div>
-                  <span className="text-[10px] font-extrabold  text-[#1575B3] bg-white border border-[#DCEAF5] px-2 py-0.5 rounded">
+                  <span className="text-[10px] font-medium  text-[#1575B3] bg-white border border-[#DCEAF5] px-2 py-0.5 rounded">
                     {rev.segment}
                   </span>
                 </div>
 
                 <Quote className="w-8 h-8 text-[#1575B3]/30" />
 
-                <p className="text-xs sm:text-sm font-bold text-[#111111] leading-relaxed italic">
+                <p className="text-xs sm:text-sm font-light text-[#111111] leading-relaxed italic">
                   "{rev.text}"
                 </p>
               </div>
 
               <div className="pt-4 border-t border-[#DCEAF5] flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#1575B3] text-white font-extrabold text-sm flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#1575B3] text-white font-medium text-sm flex items-center justify-center shrink-0">
                   {rev.name.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="text-xs sm:text-sm font-extrabold text-[#1575B3]">
+                  <h4 className="text-xs sm:text-sm font-medium text-[#1575B3]">
                     {rev.name}
                   </h4>
-                  <p className="text-[11px] font-bold text-[#5F6B7A]">
+                  <p className="text-[11px] font-medium text-[#5F6B7A]">
                     {rev.role}
                   </p>
-                  <p className="text-[10px] font-bold text-[#111111] flex items-center gap-1 mt-0.5">
+                  <p className="text-[10px] font-medium text-[#111111] flex items-center gap-1 mt-0.5">
                     <MapPin className="w-3 h-3 text-[#1575B3]" />
                     {rev.location}
                   </p>

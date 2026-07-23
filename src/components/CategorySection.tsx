@@ -116,10 +116,10 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
             {/* <span className="bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
               Kothari Product & Segment Portfolio
             </span> */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1575B3]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-[#1575B3]">
               Applications
             </h2>
-            <p className="text-sm font-bold text-[#5F6B7A]">
+            <p className="text-sm font-light text-[#5F6B7A]">
               Explore Kothari's world-class engineered products, core operational segments, and landmark infrastructure projects across India.
             </p>
           </div>
@@ -128,7 +128,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
           <div className="flex items-center gap-1.5 bg-[#F5FAFF] p-1.5 rounded-2xl border border-[#DCEAF5] shrink-0">
             <button
               onClick={() => setActiveMainCategory('Products')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
                 activeMainCategory === 'Products'
                   ? 'bg-[#1575B3] text-white shadow-sm'
                   : 'text-[#5F6B7A] hover:text-[#1575B3]'
@@ -140,7 +140,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
 
             <button
               onClick={() => setActiveMainCategory('Segments')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
                 activeMainCategory === 'Segments'
                   ? 'bg-[#1575B3] text-white shadow-sm'
                   : 'text-[#5F6B7A] hover:text-[#1575B3]'
@@ -152,7 +152,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
 
             <button
               onClick={() => setActiveMainCategory('Projects')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
                 activeMainCategory === 'Projects'
                   ? 'bg-[#1575B3] text-white shadow-sm'
                   : 'text-[#5F6B7A] hover:text-[#1575B3]'
@@ -190,19 +190,19 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
                         {/* <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#1575B3] block">
                           Core Segment
                         </span> */}
-                        <h3 className="text-base font-extrabold text-[#111111]">
+                        <h3 className="text-base font-medium text-[#111111]">
                           {seg.title}
                         </h3>
                       </div>
                     </div>
 
-                    <p className="text-xs font-bold text-[#5F6B7A] leading-relaxed mb-4">
+                    <p className="text-xs font-light text-[#5F6B7A] leading-relaxed mb-4">
                       {seg.description}
                     </p>
 
                     <div className="space-y-1.5 pt-3 border-t border-[#DCEAF5]">
                       {seg.highlights.map((h, i) => (
-                        <div key={i} className="flex items-center gap-1.5 text-[11px] font-bold text-[#111111]">
+                        <div key={i} className="flex items-center gap-1.5 text-[11px] font-medium text-[#111111]">
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#1575B3] shrink-0" />
                           <span>{h}</span>
                         </div>
@@ -216,10 +216,10 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
             {/* Products List under Active Segment */}
             <div className="space-y-4">
               <div className="flex items-center justify-between pb-2 border-b border-[#DCEAF5]">
-                <h3 className="text-lg font-extrabold text-[#1575B3]">
+                <h3 className="text-lg font-medium text-[#1575B3]">
                   Featured Systems in <span className="text-[#111111]">{selectedSegment}</span>
                 </h3>
-                <span className="text-xs font-bold text-[#5F6B7A]">
+                <span className="text-xs font-light text-[#5F6B7A]">
                   Showing {filteredProducts.length} Product Lines
                 </span>
               </div>
@@ -240,16 +240,16 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
                             referrerPolicy="no-referrer"
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           />
-                          <span className="absolute top-2 left-2 bg-[#FFFFFF]/90 backdrop-blur-xs text-[#1575B3] text-[10px] font-bold px-2 py-0.5 rounded border border-[#DCEAF5]">
+                          <span className="absolute top-2 left-2 bg-[#FFFFFF]/90 backdrop-blur-xs text-[#1575B3] text-[10px] font-medium px-2 py-0.5 rounded border border-[#DCEAF5]">
                             {product.category}
                           </span>
                         </div>
 
                         <div>
-                          <h4 className="text-base font-extrabold text-[#1575B3] line-clamp-1">
+                          <h4 className="text-base font-medium text-[#1575B3] line-clamp-1">
                             {product.name}
                           </h4>
-                          <p className="text-xs font-bold text-[#5F6B7A] mt-1 line-clamp-2 leading-relaxed">
+                          <p className="text-xs font-light text-[#5F6B7A] mt-1 line-clamp-2 leading-relaxed">
                             {product.shortDescription}
                           </p>
                         </div>
@@ -269,7 +269,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
                       <div className="pt-4 mt-4 border-t border-[#DCEAF5] flex items-center gap-2">
                         <button
                           onClick={() => onSelectProduct(product)}
-                          className="flex-1 bg-[#F5FAFF] hover:bg-[#DCEAF5] text-[#1575B3] px-3 py-2 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1"
+                          className="flex-1 bg-[#F5FAFF] hover:bg-[#DCEAF5] text-[#1575B3] px-3 py-2 rounded-xl text-xs font-medium transition flex items-center justify-center gap-1"
                         >
                           <span>Full Specifications</span>
                           <ExternalLink className="w-3.5 h-3.5" />
@@ -314,16 +314,16 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
                           referrerPolicy="no-referrer"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <span className="absolute top-2 left-2 bg-[#FFFFFF]/90 backdrop-blur-xs text-[#1575B3] text-[10px] font-bold px-2 py-0.5 rounded border border-[#DCEAF5]">
+                        <span className="absolute top-2 left-2 bg-[#FFFFFF]/90 backdrop-blur-xs text-[#1575B3] text-[10px] font-medium px-2 py-0.5 rounded border border-[#DCEAF5]">
                           {product.category}
                         </span>
                       </div>
 
                       <div>
-                        <h4 className="text-base font-extrabold text-[#1575B3] line-clamp-1">
+                        <h4 className="text-base font-medium text-[#1575B3] line-clamp-1">
                           {product.name}
                         </h4>
-                        <p className="text-xs font-bold text-[#5F6B7A] mt-1 line-clamp-2 leading-relaxed">
+                        <p className="text-xs font-light text-[#5F6B7A] mt-1 line-clamp-2 leading-relaxed">
                           {product.shortDescription}
                         </p>
                       </div>
@@ -343,7 +343,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
                     <div className="pt-4 mt-4 border-t border-[#DCEAF5] flex items-center gap-2">
                       <button
                         onClick={() => onSelectProduct(product)}
-                        className="flex-1 bg-[#1575B3] hover:bg-[#0E588A] text-white px-3 py-2 rounded-xl text-xs font-bold transition flex items-center justify-center gap-1"
+                        className="flex-1 bg-[#1575B3] hover:bg-[#0E588A] text-white px-3 py-2 rounded-xl text-xs font-medium transition flex items-center justify-center gap-1"
                       >
                         <span>View Details</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -385,11 +385,11 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
                     />
                   </div>
 
-                  <span className="text-[10px] font-extrabold text-[#1575B3] bg-white border border-[#DCEAF5] px-2.5 py-0.5 rounded-full inline-block">
+                  <span className="text-[10px] font-medium text-[#1575B3] bg-white border border-[#DCEAF5] px-2.5 py-0.5 rounded-full inline-block">
                     {proj.segment}
                   </span>
 
-                  <h4 className="text-lg font-extrabold text-[#1575B3]">
+                  <h4 className="text-lg font-medium text-[#1575B3]">
                     {proj.title}
                   </h4>
 
@@ -397,7 +397,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
                     📍 {proj.location}
                   </p> */}
 
-                  <p className="text-xs font-bold text-[#5F6B7A] leading-relaxed">
+                  <p className="text-xs font-light text-[#5F6B7A] leading-relaxed">
                     {proj.description}
                   </p>
 
@@ -408,7 +408,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
 
                 <button
                   onClick={onOpenQuoteModal}
-                  className="w-full bg-[#1575B3] hover:bg-[#0E588A] text-white py-2.5 rounded-xl font-bold text-xs transition"
+                  className="w-full bg-[#1575B3] hover:bg-[#0E588A] text-white py-2.5 rounded-xl font-medium text-xs transition"
                 >
                   Request Similar Project Quote
                 </button>
