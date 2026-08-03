@@ -1,7 +1,29 @@
 import React from 'react';
 import { Newspaper, Calendar, ArrowRight, Tag } from 'lucide-react';
 
-export const NewsAndArticles: React.FC = () => {
+type Variant = 'blue' | 'green';
+
+export const NewsAndArticles: React.FC<{ variant?: Variant }> = ({ variant = 'blue' }) => {
+  const t = variant === 'green'
+    ? {
+        section: 'bg-[#F2FBF4] border-[#BFE4CC]',
+        heading: 'text-[#1E8E3E]',
+        chip: 'bg-[#F2FBF4] border-[#BFE4CC] text-[#1E8E3E]',
+        imgWrap: 'bg-[#F2FBF4] border-[#BFE4CC]',
+        link: 'text-[#1E8E3E]',
+        card: 'border-[#BFE4CC]',
+        divider: 'border-[#BFE4CC]'
+      }
+    : {
+        section: 'bg-[#F5FAFF] border-[#DCEAF5]',
+        heading: 'text-[#1575B3]',
+        chip: 'bg-[#F5FAFF] border-[#DCEAF5] text-[#1575B3]',
+        imgWrap: 'bg-[#F5FAFF] border-[#DCEAF5]',
+        link: 'text-[#1575B3]',
+        card: 'border-[#DCEAF5]',
+        divider: 'border-[#DCEAF5]'
+      };
+
   const newsList = [
     {
       title: 'Kothari Group Expands Micro Irrigation Manufacturing Plant',
@@ -27,14 +49,14 @@ export const NewsAndArticles: React.FC = () => {
   ];
 
   return (
-    <section id="news" className="py-16 bg-[#F5FAFF] border-b border-[#DCEAF5] text-left">
+    <section id="news" className={`py-16 border-b text-left ${t.section}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#DCEAF5]">
+        <div className={`flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b ${t.divider}`}>
           <div className="space-y-2">
           
-            <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
+            <h2 className={`text-3xl sm:text-4xl font-medium ${t.heading}`}>
               News & Articles
             </h2>
             <p className="text-sm font-light text-[#5F6B7A]">
@@ -48,10 +70,10 @@ export const NewsAndArticles: React.FC = () => {
           {newsList.map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#FFFFFF] rounded-2xl border border-[#DCEAF5] p-5 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between group"
+              className={`bg-[#FFFFFF] rounded-2xl border p-5 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between group ${t.card}`}
             >
               <div className="space-y-3">
-                <div className="aspect-[16/10] bg-[#F5FAFF] rounded-xl overflow-hidden border border-[#DCEAF5]">
+                <div className={`aspect-[16/10] rounded-xl overflow-hidden border ${t.imgWrap}`}>
                   <img
                     src={item.image}
                     alt={item.title}
@@ -61,7 +83,7 @@ export const NewsAndArticles: React.FC = () => {
                 </div>
 
                 <div className="flex items-center justify-between text-[11px] font-medium text-[#5F6B7A]">
-                  <span className="bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] px-2.5 py-0.5 rounded-full">
+                  <span className={`px-2.5 py-0.5 rounded-full border ${t.chip}`}>
                     {item.category}
                   </span>
                   <span className="flex items-center gap-1">
@@ -70,7 +92,7 @@ export const NewsAndArticles: React.FC = () => {
                   </span>
                 </div>
 
-                <h3 className="text-base font-medium text-[#1575B3] line-clamp-2">
+                <h3 className={`text-base font-medium line-clamp-2 ${t.heading}`}>
                   {item.title}
                 </h3>
 
@@ -79,8 +101,8 @@ export const NewsAndArticles: React.FC = () => {
                 </p>
               </div>
 
-              <div className="pt-4 mt-4 border-t border-[#DCEAF5]">
-                <button className="text-xs font-medium text-[#1575B3] hover:underline flex items-center gap-1">
+              <div className={`pt-4 mt-4 border-t ${t.divider}`}>
+                <button className={`text-xs font-medium hover:underline flex items-center gap-1 ${t.link}`}>
                   <span>Read Full Article</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>

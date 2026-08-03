@@ -8,7 +8,9 @@ import {
   Droplet
 } from 'lucide-react';
 
-export const HighlightedPoints: React.FC = () => {
+type Variant = 'blue' | 'green';
+
+export const HighlightedPoints: React.FC<{ variant?: Variant }> = ({ variant = 'blue' }) => {
   const stats = [
     {
       number: '35+',
@@ -40,8 +42,12 @@ export const HighlightedPoints: React.FC = () => {
     }
   ];
 
+  const t = variant === 'green'
+    ? 'bg-gradient-to-br from-[#1E8E3E] to-[#0F6B2B]'
+    : 'bg-[#1575B3]';
+
   return (
-    <section className="py-12 bg-[#1575B3] text-white text-left">
+    <section className={`py-12 text-white text-left ${t}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           {/* <span className="bg-white/15 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback } from 'react';
+import { ArrowRight } from 'lucide-react';
 
 interface HeroProps {
   onExploreProducts: () => void;
@@ -129,10 +130,23 @@ export const Hero: React.FC<HeroProps> = ({
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full block" />
         <div className="absolute inset-0 bg-[#003F82]/60 pointer-events-none z-10" />
 
-        <div className="absolute bottom-40 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-white/60 text-[11px] font-semibold tracking-[0.2em] uppercase">Scroll</span>
-          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex items-start justify-center pt-2">
-            <div className="w-1 h-2 rounded-full bg-white/70 animate-[pop_1.5s_ease-in-out_infinite]" />
+        <div className="absolute inset-0 z-20 flex items-center justify-center px-4">
+          <div className="max-w-3xl text-center space-y-5">
+            <h1 className="text-4xl sm:text-6xl font-extrabold text-white leading-tight">
+              Strong. Reliable.
+              <br />
+              Built for Every Need.
+            </h1>
+            <p className="text-sm sm:text-base font-light text-white/85 max-w-xl mx-auto leading-relaxed">
+              Wide range of Agri Pipes, Plumbing Pipes & Fittings for agriculture, plumbing, infrastructure and industrial applications.
+            </p>
+            <button
+              onClick={onExploreProducts}
+              className="inline-flex items-center gap-2 bg-white text-[#003F82] hover:bg-[#EAF3FA] px-8 py-3.5 rounded-xl font-semibold text-sm transition-all"
+            >
+              Explore Products
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
