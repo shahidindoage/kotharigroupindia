@@ -91,7 +91,7 @@ export const InteractiveBlueprintStudio: React.FC<InteractiveBlueprintStudioProp
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] px-3.5 py-1 rounded-full text-xs font-bold text-[#1575B3]">
+          <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] px-3.5 py-1 rounded-lg text-xs font-bold text-[#1575B3]">
             <FileCode2 className="w-3.5 h-3.5" />
             <span>Interactive Application Studio</span>
           </div>
@@ -111,7 +111,7 @@ export const InteractiveBlueprintStudio: React.FC<InteractiveBlueprintStudioProp
               <button
                 key={sc.id}
                 onClick={() => handleScenarioChange(sc.id)}
-                className={`p-5 rounded-2xl text-left border transition-all ${
+                className={`p-5 rounded-lg text-left border transition-all ${
                   active
                     ? 'bg-[#FFFFFF] border-[#1575B3] shadow-md shadow-[#1575B3]/10 ring-2 ring-[#1575B3]/20'
                     : 'bg-[#FFFFFF]/60 border-[#DCEAF5] hover:border-[#1575B3] hover:bg-[#FFFFFF]'
@@ -140,7 +140,7 @@ export const InteractiveBlueprintStudio: React.FC<InteractiveBlueprintStudioProp
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Blueprint Visual Canvas (Interactive Schematic) */}
-          <div className="lg:col-span-7 bg-[#FFFFFF] rounded-3xl border border-[#DCEAF5] p-6 shadow-xs space-y-4">
+          <div className="lg:col-span-7 bg-[#FFFFFF] rounded-lg border border-[#DCEAF5] p-6 shadow-xs space-y-4">
             <div className="flex items-center justify-between border-b border-[#DCEAF5] pb-3">
               <div className="flex items-center gap-2 text-xs font-extrabold text-[#1575B3]">
                 <Layers className="w-4 h-4" />
@@ -152,7 +152,7 @@ export const InteractiveBlueprintStudio: React.FC<InteractiveBlueprintStudioProp
             </div>
 
             {/* Simulated Blueprint Graphic Diagram */}
-            <div className="relative bg-[#0E283D] rounded-2xl p-6 sm:p-8 overflow-hidden min-h-[320px] flex flex-col justify-between blueprint-grid text-white">
+            <div className="relative bg-[#0E283D] rounded-lg p-6 sm:p-8 overflow-hidden min-h-[320px] flex flex-col justify-between blueprint-grid text-white">
               
               {/* Graphic Blueprint Header */}
               <div className="flex justify-between items-start text-xs font-mono text-cyan-300/80">
@@ -197,7 +197,7 @@ export const InteractiveBlueprintStudio: React.FC<InteractiveBlueprintStudioProp
               {/* Canvas Legend */}
               <div className="flex flex-wrap items-center justify-between text-[11px] font-mono text-cyan-200/80 border-t border-cyan-800/50 pt-2">
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 inline-block" />
+                  <span className="w-2.5 h-2.5 rounded-lg bg-cyan-400 inline-block" />
                   Pressurized Water Line
                 </span>
                 <span>Max Design Pressure: 25.0 Bar</span>
@@ -211,7 +211,7 @@ export const InteractiveBlueprintStudio: React.FC<InteractiveBlueprintStudioProp
           </div>
 
           {/* Right Column: Itemized Bill Of Materials (BOM) */}
-          <div className="lg:col-span-5 bg-[#FFFFFF] rounded-3xl border border-[#DCEAF5] p-6 shadow-xs space-y-6">
+          <div className="lg:col-span-5 bg-[#FFFFFF] rounded-lg border border-[#DCEAF5] p-6 shadow-xs space-y-6">
             
             <div className="border-b border-[#DCEAF5] pb-3 flex justify-between items-center">
               <div>
@@ -232,7 +232,7 @@ export const InteractiveBlueprintStudio: React.FC<InteractiveBlueprintStudioProp
               {nodes.map((node) => (
                 <div
                   key={node.id}
-                  className="bg-[#F5FAFF] p-3.5 rounded-xl border border-[#DCEAF5] space-y-2 text-xs"
+                  className="bg-[#F5FAFF] p-3.5 rounded-lg border border-[#DCEAF5] space-y-2 text-xs"
                 >
                   <div className="flex justify-between items-start gap-2">
                     <div>
@@ -288,7 +288,7 @@ export const InteractiveBlueprintStudio: React.FC<InteractiveBlueprintStudioProp
             </div>
 
             {/* Total Summary Footer */}
-            <div className="bg-[#1575B3] text-white p-4 rounded-2xl space-y-3">
+            <div className="bg-[#1575B3] text-white p-4 rounded-lg space-y-3">
               <div className="flex justify-between items-center text-xs">
                 <span className="font-semibold text-white/80">
                   Estimated Material Total:
@@ -303,7 +303,7 @@ export const InteractiveBlueprintStudio: React.FC<InteractiveBlueprintStudioProp
 
               <button
                 onClick={onOpenQuoteModal}
-                className="w-full bg-white hover:bg-[#F5FAFF] text-[#1575B3] py-3 rounded-xl font-extrabold text-xs flex items-center justify-center gap-2 shadow-sm transition"
+                className="w-full bg-white hover:bg-[#F5FAFF] text-[#1575B3] py-3 rounded-lg font-extrabold text-xs flex items-center justify-center gap-2 shadow-sm transition"
               >
                 <span>Export Schematic To Formal Quote</span>
                 <ArrowRight className="w-4 h-4" />

@@ -63,7 +63,7 @@ export const Home2Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
 
         {/* Newsletter */}
-        <div className="bg-[#F5FAFF] rounded-3xl border border-[#DCEAF5] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xs">
+        <div className="bg-[#F5FAFF] rounded-lg border border-[#DCEAF5] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-1.5 max-w-xl">
             <h3 className="text-xl sm:text-2xl font-medium text-[#1575B3]">
               Subscribe To Kothari Group Updates
@@ -80,11 +80,11 @@ export const Home2Footer: React.FC = () => {
               placeholder="Enter your email address..."
               value={newsletterEmail}
               onChange={(e) => setNewsletterEmail(e.target.value)}
-              className="px-4 py-3 bg-[#FFFFFF] border border-[#DCEAF5] rounded-xl text-xs font-light text-[#111111] placeholder-[#5F6B7A] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30 w-full lg:w-64"
+              className="px-4 py-3 bg-[#FFFFFF] border border-[#DCEAF5] rounded-lg text-xs font-light text-[#111111] placeholder-[#5F6B7A] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30 w-full lg:w-64"
             />
             <button
               type="submit"
-              className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-3 rounded-xl font-medium text-xs shadow-sm transition shrink-0"
+              className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-3 rounded-lg font-medium text-xs shadow-sm transition shrink-0"
             >
               {subscribed ? 'Subscribed!' : 'Subscribe'}
             </button>
@@ -121,7 +121,7 @@ export const Home2Footer: React.FC = () => {
                     href="#home2-footer"
                     onClick={(e) => e.preventDefault()}
                     aria-label={s.label}
-                    className={`w-9 h-9 rounded-full bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] flex items-center justify-center transition-all hover:text-white hover:shadow-md ${s.hover}`}
+                    className={`w-9 h-9 rounded-lg bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] flex items-center justify-center transition-all hover:text-white hover:shadow-md ${s.hover}`}
                   >
                     <Icon className="w-4 h-4" />
                   </a>

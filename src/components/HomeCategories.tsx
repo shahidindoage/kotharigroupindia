@@ -46,7 +46,7 @@ export const HomeCategories: React.FC = () => {
     <section id="our-categories" className="py-16 sm:py-20 bg-[#FFFFFF] border-b border-[#DCEAF5] scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
         <div className="text-center max-w-2xl mx-auto space-y-4">
-          <span className="inline-flex items-center gap-2 bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] text-[11px] font-semibold px-3.5 py-1.5 rounded-full tracking-wider shadow-xs">
+          <span className="inline-flex items-center gap-2 bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] text-[11px] font-semibold px-3.5 py-1.5 rounded-lg tracking-wider shadow-xs">
             <Layers className="w-3.5 h-3.5" />
             Our Product Categories
           </span>
@@ -68,7 +68,7 @@ export const HomeCategories: React.FC = () => {
                   key={cat.title}
                   onClick={() => setActive(idx)}
                   onMouseEnter={() => setActive(idx)}
-                  className={`w-full text-left rounded-2xl border transition-all duration-300 p-4 ${
+                  className={`w-full text-left rounded-lg border transition-all duration-300 p-4 ${
                     isActive
                       ? 'bg-[#F5FAFF] border-[#1575B3]/30 shadow-lg shadow-[#1575B3]/10'
                       : 'bg-transparent border-transparent hover:bg-[#F5FAFF]/60 hover:border-[#DCEAF5]'
@@ -76,7 +76,7 @@ export const HomeCategories: React.FC = () => {
                 >
                   <div className="flex items-center gap-4">
                     <span
-                      className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold transition-colors ${
+                      className={`w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold transition-colors ${
                         isActive
                           ? 'bg-gradient-to-br from-[#1575B3] to-[#0E588A] text-white shadow-md shadow-[#1575B3]/25'
                           : 'bg-[#F5FAFF] border border-[#DCEAF5] text-[#5F6B7A]'
@@ -110,7 +110,7 @@ export const HomeCategories: React.FC = () => {
           </div>
 
           {/* RIGHT: Image Preview */}
-          <div className="relative h-80 lg:h-full min-h-[24rem] rounded-3xl overflow-hidden border border-[#DCEAF5] shadow-xl shadow-[#1575B3]/10">
+          <div className="relative h-80 lg:h-full min-h-[24rem] rounded-lg overflow-hidden border border-[#DCEAF5] shadow-xl shadow-[#1575B3]/10">
             <img
               key={active}
               src={categories[active].image}
@@ -121,7 +121,7 @@ export const HomeCategories: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#003F82]/80 via-[#003F82]/15 to-transparent" />
 
-            <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#1575B3] text-[10px] font-semibold px-3 py-1.5 rounded-full border border-[#DCEAF5]">
+            <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#1575B3] text-[10px] font-semibold px-3 py-1.5 rounded-lg border border-[#DCEAF5]">
               {categories[active].num} · {categories[active].title}
             </span>
 
@@ -142,7 +142,7 @@ export const HomeCategories: React.FC = () => {
               </p>
               <button
                 onClick={scrollToProducts}
-                className="mt-4 inline-flex items-center gap-2 bg-white text-[#1575B3] hover:bg-[#7CC4EE] px-5 py-2.5 rounded-xl font-semibold text-xs transition-all group/link"
+                className="mt-4 inline-flex items-center gap-2 bg-white text-[#1575B3] hover:bg-[#7CC4EE] px-5 py-2.5 rounded-lg font-semibold text-xs transition-all group/link"
               >
                 View Products
                 <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />

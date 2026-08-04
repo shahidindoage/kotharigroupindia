@@ -24,7 +24,7 @@ export const MaterialComparisonTable: React.FC<MaterialComparisonTableProps> = (
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 bg-[#F5FAFF] border border-[#DCEAF5] px-3.5 py-1 rounded-full text-xs font-bold text-[#1575B3]">
+          <div className="inline-flex items-center gap-2 bg-[#F5FAFF] border border-[#DCEAF5] px-3.5 py-1 rounded-lg text-xs font-bold text-[#1575B3]">
             <Award className="w-3.5 h-3.5" />
             <span>Material Performance Benchmark</span>
           </div>
@@ -48,7 +48,7 @@ export const MaterialComparisonTable: React.FC<MaterialComparisonTableProps> = (
             <button
               key={item.id}
               onClick={() => setHighlightMaterial(item.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
                 highlightMaterial === item.id
                   ? 'bg-[#1575B3] text-white shadow-md shadow-[#1575B3]/20'
                   : 'bg-[#F5FAFF] text-[#5F6B7A] border border-[#DCEAF5] hover:border-[#1575B3]'
@@ -60,7 +60,7 @@ export const MaterialComparisonTable: React.FC<MaterialComparisonTableProps> = (
         </div>
 
         {/* Comparison Table Container */}
-        <div className="bg-[#F5FAFF] rounded-3xl border border-[#DCEAF5] p-4 sm:p-6 shadow-xs overflow-x-auto">
+        <div className="bg-[#F5FAFF] rounded-lg border border-[#DCEAF5] p-4 sm:p-6 shadow-xs overflow-x-auto">
           <table className="w-full text-left text-xs border-collapse min-w-[700px]">
             <thead>
               <tr className="border-b border-[#DCEAF5] text-[#1575B3]">
@@ -118,9 +118,9 @@ export const MaterialComparisonTable: React.FC<MaterialComparisonTableProps> = (
         </div>
 
         {/* Advantage Banner */}
-        <div className="bg-[#1575B3] text-white p-6 sm:p-8 rounded-3xl shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-[#1575B3] text-white p-6 sm:p-8 rounded-lg shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl text-left">
-            <span className="bg-white/20 px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-wider">
+            <span className="bg-white/20 px-3 py-1 rounded-lg text-xs font-bold text-white uppercase tracking-wider">
               Polymer Advantage
             </span>
             <h3 className="text-xl sm:text-2xl font-extrabold leading-snug">
@@ -133,7 +133,7 @@ export const MaterialComparisonTable: React.FC<MaterialComparisonTableProps> = (
 
           <button
             onClick={onOpenQuoteModal}
-            className="shrink-0 bg-white hover:bg-[#F5FAFF] text-[#1575B3] px-6 py-3.5 rounded-xl font-extrabold text-xs sm:text-sm shadow-md transition flex items-center gap-2"
+            className="shrink-0 bg-white hover:bg-[#F5FAFF] text-[#1575B3] px-6 py-3.5 rounded-lg font-extrabold text-xs sm:text-sm shadow-md transition flex items-center gap-2"
           >
             <span>Request Comparative Cost Audit</span>
             <ArrowRight className="w-4 h-4" />

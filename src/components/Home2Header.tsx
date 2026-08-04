@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, X, ChevronDown, Sprout, Factory, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const sections = [
   { id: 'home', label: 'Home' },
@@ -13,14 +14,16 @@ const divisions = [
     name: 'Agriculture Division',
     desc: 'Drip, sprinklers & micro irrigation.',
     icon: Sprout,
-    accent: 'text-[#1E8E3E] bg-[#EAF8EF]'
+    accent: 'text-[#1E8E3E] bg-[#EAF8EF]',
+    url:'/home3'
   },
   {
     id: 'solutions',
     name: 'Pipe Division',
     desc: 'Agri, plumbing & drainage pipes.',
     icon: Factory,
-    accent: 'text-[#1575B3] bg-[#F5FAFF]'
+    accent: 'text-[#1575B3] bg-[#F5FAFF]',
+    url:'/'
   }
 ];
 
@@ -73,7 +76,7 @@ export const Home2Header: React.FC = () => {
     <header className="sticky top-0 z-50 bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#DCEAF5]">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center gap-4">
         {/* Brand Logo */}
-        <button onClick={() => handleNav('home')} className="flex items-center shrink-0" aria-label="Kothari Group Home">
+        <Link to='/home2' onClick={() => handleNav('home')} className="flex items-center shrink-0" aria-label="Kothari Group Home">
           <img
             src="https://kotharigroupindia.com/img/Kothariblue_logo.png"
             alt="Kothari Group Logo"
@@ -83,7 +86,7 @@ export const Home2Header: React.FC = () => {
               (e.target as HTMLElement).style.display = 'none';
             }}
           />
-        </button>
+        </Link>
 
         {/* Right Side: Nav + Actions (aligned to far right) */}
         <div className="ml-auto flex items-center gap-3">
@@ -123,23 +126,23 @@ export const Home2Header: React.FC = () => {
 
             {divOpen && (
               <div className="absolute right-0 top-full pt-2 w-72">
-                <div className="bg-white rounded-2xl border border-[#DCEAF5] shadow-xl p-2 space-y-1">
+                <div className="bg-white rounded-lg border border-[#DCEAF5] shadow-xl p-2 space-y-1">
                   {divisions.map((d, i) => {
                     const Icon = d.icon;
                     return (
-                      <button
+                      <Link to={d.url}
                         key={i}
                         onClick={() => handleNav(d.id)}
-                        className="w-full flex items-start gap-3 p-3 rounded-xl hover:bg-[#F5FAFF] transition-colors text-left"
+                        className="w-full flex items-start gap-3 p-3 rounded-lg hover:bg-[#F5FAFF] transition-colors text-left"
                       >
-                        <span className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${d.accent}`}>
+                        <span className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${d.accent}`}>
                           <Icon className="w-5 h-5" />
                         </span>
                         <span>
                           <span className="block text-sm font-medium text-[#111111]">{d.name}</span>
                           <span className="block text-xs font-light text-[#5F6B7A] mt-0.5">{d.desc}</span>
                         </span>
-                      </button>
+                      </Link>
                     );
                   })}
                 </div>
@@ -151,7 +154,7 @@ export const Home2Header: React.FC = () => {
         {/* Get in Touch Button */}
         <button
           onClick={handleGetInTouch}
-          className="hidden lg:inline-flex items-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-2.5 rounded-xl text-sm font-medium shadow-md shadow-[#1575B3]/15 hover:shadow-lg transition-all"
+          className="hidden lg:inline-flex items-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-2.5 rounded-lg text-sm font-medium shadow-md shadow-[#1575B3]/15 hover:shadow-lg transition-all"
         >
           Get in Touch
           <ArrowRight className="w-4 h-4" />
@@ -163,7 +166,7 @@ export const Home2Header: React.FC = () => {
             setMobileOpen(!mobileOpen);
             setDivOpen(false);
           }}
-          className="lg:hidden p-2.5 text-[#1575B3] bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl hover:bg-[#DCEAF5]/50 transition"
+          className="lg:hidden p-2.5 text-[#1575B3] bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg hover:bg-[#DCEAF5]/50 transition"
           aria-label="Toggle Navigation Menu"
         >
           {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -217,7 +220,7 @@ export const Home2Header: React.FC = () => {
 
           <button
             onClick={handleGetInTouch}
-            className="w-full flex items-center justify-center gap-2 bg-[#1575B3] text-white py-3 rounded-xl font-medium text-sm mt-3 shadow-sm"
+            className="w-full flex items-center justify-center gap-2 bg-[#1575B3] text-white py-3 rounded-lg font-medium text-sm mt-3 shadow-sm"
           >
             Get in Touch
             <ArrowRight className="w-4 h-4" />

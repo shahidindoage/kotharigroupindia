@@ -6,13 +6,16 @@ type Variant = 'blue' | 'green';
 export const NewsAndArticles: React.FC<{ variant?: Variant }> = ({ variant = 'blue' }) => {
   const t = variant === 'green'
     ? {
-        section: 'bg-[#F2FBF4] border-[#BFE4CC]',
-        heading: 'text-[#1E8E3E]',
-        chip: 'bg-[#F2FBF4] border-[#BFE4CC] text-[#1E8E3E]',
-        imgWrap: 'bg-[#F2FBF4] border-[#BFE4CC]',
-        link: 'text-[#1E8E3E]',
-        card: 'border-[#BFE4CC]',
-        divider: 'border-[#BFE4CC]'
+       
+
+
+          section: 'bg-[#F5FAFF] border-[#DCEAF5]',
+      heading: 'text-[#1E8E3E]',
+        chip: 'bg-[#F5FAFF] border-[#DCEAF5] text-[#1575B3]',
+        imgWrap: 'bg-[#F5FAFF] border-[#DCEAF5]',
+        link: 'text-[#1575B3]',
+        card: 'border-[#DCEAF5]',
+        divider: 'border-[#DCEAF5]'
       }
     : {
         section: 'bg-[#F5FAFF] border-[#DCEAF5]',
@@ -70,10 +73,10 @@ export const NewsAndArticles: React.FC<{ variant?: Variant }> = ({ variant = 'bl
           {newsList.map((item, idx) => (
             <div
               key={idx}
-              className={`bg-[#FFFFFF] rounded-2xl border p-5 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between group ${t.card}`}
+              className={`bg-[#FFFFFF] rounded-lg border p-5 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between group ${t.card}`}
             >
               <div className="space-y-3">
-                <div className={`aspect-[16/10] rounded-xl overflow-hidden border ${t.imgWrap}`}>
+                <div className={`aspect-[16/10] rounded-lg overflow-hidden border ${t.imgWrap}`}>
                   <img
                     src={item.image}
                     alt={item.title}
@@ -83,7 +86,7 @@ export const NewsAndArticles: React.FC<{ variant?: Variant }> = ({ variant = 'bl
                 </div>
 
                 <div className="flex items-center justify-between text-[11px] font-medium text-[#5F6B7A]">
-                  <span className={`px-2.5 py-0.5 rounded-full border ${t.chip}`}>
+                  <span className={`px-2.5 py-0.5 rounded-lg border ${t.chip}`}>
                     {item.category}
                   </span>
                   <span className="flex items-center gap-1">

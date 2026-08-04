@@ -27,6 +27,7 @@ import {
   Layers,
   ArrowLeft
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const useReveal = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -62,11 +63,11 @@ const Reveal: React.FC<{ children: React.ReactNode; delay?: number; className?: 
 const SectionLabel: React.FC<{ children: React.ReactNode; icon?: React.ComponentType<{ className?: string }> }> = ({ children, icon }) => {
   const Icon = icon;
   return (
-    <span className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] text-[#1575B3] text-[11px] font-semibold px-3.5 py-1.5 rounded-full tracking-wider shadow-xs">
+    <span className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] text-[#1575B3] text-[11px] font-semibold px-3.5 py-1.5 rounded-lg tracking-wider shadow-xs">
       {Icon ? (
         <Icon className="w-3.5 h-3.5" />
       ) : (
-        <span className="w-1.5 h-1.5 rounded-full bg-[#1575B3]" />
+        <span className="w-1.5 h-1.5 rounded-lg bg-[#1575B3]" />
       )}
       {children}
     </span>
@@ -139,7 +140,7 @@ const HighlightsPanel: React.FC<HighlightsPanelProps> = ({ points, tone }) => {
         <div className="h-full [backface-visibility:hidden] p-8 sm:p-10">
           <div className="space-y-6">
             <span className={`inline-flex items-center gap-2 text-[11px] font-semibold tracking-wider ${tone.highlights}`}>
-              <span className="w-2 h-2 rounded-full bg-current" />
+              <span className="w-2 h-2 rounded-lg bg-current" />
               Key Highlights
             </span>
 
@@ -157,9 +158,9 @@ const HighlightsPanel: React.FC<HighlightsPanelProps> = ({ points, tone }) => {
                       setActiveIdx(i);
                       setFlipped(true);
                     }}
-                    className="group/li relative flex items-start gap-3 rounded-xl px-2 py-1 -mx-2 cursor-pointer transition-colors hover:bg-white/80"
+                    className="group/li relative flex items-start gap-3 rounded-lg px-2 py-1 -mx-2 cursor-pointer transition-colors hover:bg-white/80"
                   >
-                    <div className={`mt-0.5 w-8 h-8 rounded-xl bg-white border border-[#DCEAF5] flex items-center justify-center shrink-0 transition-colors ${tone.liBox}`}>
+                    <div className={`mt-0.5 w-8 h-8 rounded-lg bg-white border border-[#DCEAF5] flex items-center justify-center shrink-0 transition-colors ${tone.liBox}`}>
                       <PointIcon className="w-4 h-4" />
                     </div>
                     <p className="flex-1 text-sm font-medium text-[#111111] leading-snug pt-1.5">{pt.label}</p>
@@ -186,16 +187,16 @@ const HighlightsPanel: React.FC<HighlightsPanelProps> = ({ points, tone }) => {
             <button
               onClick={() => setFlipped(false)}
               aria-label="Back to highlights"
-              className="absolute top-4 left-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur-sm border border-[#DCEAF5] text-[#1575B3] flex items-center justify-center hover:bg-white transition-colors"
+              className="absolute top-4 left-4 w-9 h-9 rounded-lg bg-white/90 backdrop-blur-sm border border-[#DCEAF5] text-[#1575B3] flex items-center justify-center hover:bg-white transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
             </button>
-            <span className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-[#1575B3] text-[10px] font-semibold px-2.5 py-1 rounded-full border border-[#DCEAF5]">
+            <span className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-[#1575B3] text-[10px] font-semibold px-2.5 py-1 rounded-lg border border-[#DCEAF5]">
               Kothari Products
             </span>
             <div className="absolute bottom-0 inset-x-0 p-6 space-y-1">
               <span className="inline-flex items-center gap-1.5 text-[10px] font-semibold tracking-wider text-white/85">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#7CC4EE]" />
+                <span className="w-1.5 h-1.5 rounded-lg bg-[#7CC4EE]" />
                 Key Highlight
               </span>
               <p className="text-lg font-medium text-white leading-snug">{points[activeIdx].label}</p>
@@ -222,7 +223,8 @@ export const Home2: React.FC = () => {
       button: 'Explore Agriculture Division',
       icon: Sprout,
       glyph: [Droplets, Wrench],
-      green: true
+      green: true,
+      url:'/home3'
     },
     {
       tag: 'Pipe Division',
@@ -236,7 +238,8 @@ export const Home2: React.FC = () => {
       ],
       button: 'Explore Pipe Division',
       icon: Factory,
-      glyph: [Wrench, Droplets]
+      glyph: [Wrench, Droplets],
+      url:'/'
     }
   ];
 
@@ -358,15 +361,15 @@ export const Home2: React.FC = () => {
         ))}
 
         {/* Decorative Glows */}
-        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#2E9FE3]/20 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-40 -left-24 w-[28rem] h-[28rem] rounded-full bg-[#003F82]/60 blur-3xl pointer-events-none" />
+        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-lg bg-[#2E9FE3]/20 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-40 -left-24 w-[28rem] h-[28rem] rounded-lg bg-[#003F82]/60 blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-8 pt-24 pb-24 sm:pt-28 sm:pb-28 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-center">
           {/* LEFT: Text Content */}
           <div className="text-center lg:text-left space-y-7">
             {/* Eyebrow Badge */}
             <div
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 text-xs font-medium tracking-wide"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-4 py-1.5 text-xs font-medium tracking-wide"
               style={{ animation: 'fadeSlideUp 0.8s 0.1s both' }}
             >
               <ShieldCheck className="w-4 h-4 text-[#7CC4EE]" />
@@ -396,7 +399,7 @@ export const Home2: React.FC = () => {
             >
               <a
                 href="#solutions"
-                className="inline-flex items-center gap-2 bg-white text-[#003F82] hover:bg-[#7CC4EE] px-7 py-3.5 rounded-xl font-semibold text-sm transition-all shadow-lg shadow-black/20 hover:-translate-y-0.5 group"
+                className="inline-flex items-center gap-2 bg-white text-[#003F82] hover:bg-[#7CC4EE] px-7 py-3.5 rounded-lg font-semibold text-sm transition-all shadow-lg shadow-black/20 hover:-translate-y-0.5 group"
               >
                 Explore Our Solutions
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -435,11 +438,11 @@ export const Home2: React.FC = () => {
             style={{ animation: 'fadeSlideUp 0.9s 0.35s both' }}
           >
             {/* Rotating Dashed Ring */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[19rem] h-[19rem] sm:w-[26rem] sm:h-[26rem] rounded-full border-2 border-dashed border-white/15 animate-[spinSlow_45s_linear_infinite] pointer-events-none" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] sm:w-[21rem] sm:h-[21rem] rounded-full border border-white/10 pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[19rem] h-[19rem] sm:w-[26rem] sm:h-[26rem] rounded-lg border-2 border-dashed border-white/15 animate-[spinSlow_45s_linear_infinite] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[15rem] h-[15rem] sm:w-[21rem] sm:h-[21rem] rounded-lg border border-white/10 pointer-events-none" />
 
             {/* Main Product Image Carousel */}
-            <div className="relative w-72 sm:w-80 lg:w-96 aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/20 shadow-2xl shadow-black/40 rotate-2 transition-transform duration-700">
+            <div className="relative w-72 sm:w-80 lg:w-96 aspect-[4/5] rounded-lg overflow-hidden border border-white/20 shadow-2xl shadow-black/40 rotate-2 transition-transform duration-700">
               {heroSlides.map((slide, i) => (
                 <img
                   key={`bg-${i}`}
@@ -454,7 +457,7 @@ export const Home2: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#003F82]/75 via-[#0B4E8C]/30 to-[#003F82]/10 pointer-events-none" />
 
               {/* Slide Chip */}
-              <span key={`chip-${heroSlide}`} className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#1575B3] text-[10px] font-semibold px-3 py-1.5 rounded-full border border-[#DCEAF5]" style={{ animation: 'fadeSlideUp 0.6s ease-out both' }}>
+              <span key={`chip-${heroSlide}`} className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#1575B3] text-[10px] font-semibold px-3 py-1.5 rounded-lg border border-[#DCEAF5]" style={{ animation: 'fadeSlideUp 0.6s ease-out both' }}>
                 <Sprout className="w-3.5 h-3.5 inline -mt-0.5 mr-1" />
                 {heroSlides[heroSlide].label}
               </span>
@@ -471,7 +474,7 @@ export const Home2: React.FC = () => {
 
             {/* Floating Stat Card: Top Right */}
             <div
-              className="absolute -top-5 right-0 sm:-right-6 bg-white text-[#003F82] rounded-2xl shadow-2xl shadow-black/30 p-3.5 flex items-center gap-3"
+              className="absolute -top-5 right-0 sm:-right-6 bg-white text-[#003F82] rounded-lg shadow-2xl shadow-black/30 p-3.5 flex items-center gap-3"
               style={{ animation: 'floaty 5s ease-in-out infinite' }}
             >
               <div className="w-11 h-11 rounded-xl bg-[#1575B3] text-white flex items-center justify-center">
@@ -485,10 +488,10 @@ export const Home2: React.FC = () => {
 
             {/* Floating Stat Card: Bottom Left */}
             <div
-              className="absolute -bottom-5 left-0 sm:-left-6 bg-white text-[#003F82] rounded-2xl shadow-2xl shadow-black/30 p-3.5 flex items-center gap-3"
+              className="absolute -bottom-5 left-0 sm:-left-6 bg-white text-[#003F82] rounded-lg shadow-2xl shadow-black/30 p-3.5 flex items-center gap-3"
               style={{ animation: 'floaty2 5.5s ease-in-out infinite' }}
             >
-              <div className="w-11 h-11 rounded-xl bg-emerald-500 text-white flex items-center justify-center">
+              <div className="w-11 h-11 rounded-lg bg-emerald-500 text-white flex items-center justify-center">
                 <Users className="w-5 h-5" />
               </div>
               <div>
@@ -500,7 +503,7 @@ export const Home2: React.FC = () => {
         </div>
 
         {/* Bottom Wave / Curve */}
-        <div className="relative h-10 bg-[#F5FAFF] rounded-t-[3rem]" />
+        <div className="relative h-10 bg-[#F5FAFF] rounded-t-lg" />
       </section>
 
       {/* ============================================================
@@ -553,7 +556,7 @@ export const Home2: React.FC = () => {
 
               return (
                 <Reveal key={idx} delay={idx * 100}>
-                  <article className={`group relative bg-[#FFFFFF] rounded-3xl border border-[#DCEAF5] shadow-xs hover:shadow-2xl ${tone.hoverBorder} transition-all duration-300 overflow-hidden`}>
+                  <article className={`group relative bg-[#FFFFFF] rounded-lg border border-[#DCEAF5] shadow-xs hover:shadow-2xl ${tone.hoverBorder} transition-all duration-300 overflow-hidden`}>
                     <div className="grid grid-cols-1 lg:grid-cols-2">
                       {/* Content Side: Icon + Heading + Description + Button */}
                       <div className={`relative p-8 sm:p-10 space-y-6 overflow-hidden ${isReversed ? 'lg:order-2' : ''}`}>
@@ -561,7 +564,7 @@ export const Home2: React.FC = () => {
                           {/* Icon + Tag */}
                           <div className="flex flex-wrap items-center gap-4">
                             <div className="relative shrink-0">
-                              <div className={`w-16 h-16 rounded-2xl ${tone.iconTile} text-white flex items-center justify-center  ${tone.iconShadow} group-hover:scale-105 transition-all duration-300`}>
+                              <div className={`w-16 h-16 rounded-lg ${tone.iconTile} text-white flex items-center justify-center  ${tone.iconShadow} group-hover:scale-105 transition-all duration-300`}>
                                 <IconComp className="w-8 h-8" />
                               </div>
                               
@@ -577,10 +580,10 @@ export const Home2: React.FC = () => {
                           </div>
 
                           {/* Button */}
-                          <button className={`group/btn inline-flex items-center gap-2.5 text-white px-6 py-3.5 rounded-xl font-medium text-sm transition-all shadow-md ${tone.button}`}>
+                          <Link to={div.url} className={`group/btn inline-flex items-center gap-2.5 text-white px-6 py-3.5 rounded-lg font-medium text-sm transition-all shadow-md ${tone.button}`}>
                             <span>{div.button}</span>
                             <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                          </button>
+                          </Link>
                         </div>
                       </div>
 
@@ -615,13 +618,13 @@ export const Home2: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
             {/* Left Feature Panel */}
             <Reveal className="lg:col-span-2">
-              <div className="relative h-full rounded-3xl overflow-hidden bg-gradient-to-br from-[#003F82] via-[#0B4E8C] to-[#1575B3] text-white p-8 sm:p-10 flex flex-col justify-between min-h-[24rem]">
+              <div className="relative h-full rounded-lg overflow-hidden bg-gradient-to-br from-[#003F82] via-[#0B4E8C] to-[#1575B3] text-white p-8 sm:p-10 flex flex-col justify-between min-h-[24rem]">
                 <div className="absolute inset-0 blueprint-grid opacity-40" />
-                <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-white/10 blur-2xl pointer-events-none" />
-                <div className="absolute -bottom-20 -left-16 w-64 h-64 rounded-full bg-[#003F82]/60 blur-3xl pointer-events-none" />
+                <div className="absolute -top-16 -right-16 w-56 h-56 rounded-lg bg-white/10 blur-2xl pointer-events-none" />
+                <div className="absolute -bottom-20 -left-16 w-64 h-64 rounded-lg bg-[#003F82]/60 blur-3xl pointer-events-none" />
 
                 <div className="relative space-y-6">
-                  <div className="w-14 h-14 rounded-2xl bg-white/15 border border-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-lg bg-white/15 border border-white/20 backdrop-blur-sm flex items-center justify-center">
                     <Award className="w-7 h-7" />
                   </div>
                   <div className="space-y-3">
@@ -635,11 +638,11 @@ export const Home2: React.FC = () => {
                 </div>
 
                 <div className="relative grid grid-cols-2 gap-4 mt-8">
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-4">
                     <p className="text-2xl sm:text-3xl font-bold">35+</p>
                     <p className="text-[11px] font-light text-white/75 mt-1 tracking-wider">Years of Excellence</p>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-4">
                     <p className="text-2xl sm:text-3xl font-bold">23+</p>
                     <p className="text-[11px] font-light text-white/75 mt-1 tracking-wider">States Served</p>
                   </div>
@@ -653,12 +656,12 @@ export const Home2: React.FC = () => {
                 const IconComp = pt.icon;
                 return (
                   <Reveal key={idx} delay={idx * 70}>
-                    <div className="group flex items-start gap-5 p-5 sm:p-6 rounded-2xl border border-[#DCEAF5] bg-[#F5FAFF] hover:bg-white hover:border-[#1575B3] hover:shadow-lg transition-all duration-300">
+                    <div className="group flex items-start gap-5 p-5 sm:p-6 rounded-lg border border-[#DCEAF5] bg-[#F5FAFF] hover:bg-white hover:border-[#1575B3] hover:shadow-lg transition-all duration-300">
                       <div className="relative shrink-0">
-                        <div className="w-14 h-14 rounded-2xl bg-white border border-[#DCEAF5] text-[#1575B3] flex items-center justify-center group-hover:bg-[#1575B3] group-hover:text-white group-hover:scale-105 transition-all shadow-xs">
+                        <div className="w-14 h-14 rounded-lg bg-white border border-[#DCEAF5] text-[#1575B3] flex items-center justify-center group-hover:bg-[#1575B3] group-hover:text-white group-hover:scale-105 transition-all shadow-xs">
                           <IconComp className="w-7 h-7" />
                         </div>
-                        <span className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-[#2E9FE3] text-white text-[10px] font-bold flex items-center justify-center border-2 border-white">
+                        <span className="absolute -top-2 -left-2 w-6 h-6 rounded-lg bg-[#2E9FE3] text-white text-[10px] font-bold flex items-center justify-center border-2 border-white">
                           {idx + 1}
                         </span>
                       </div>
@@ -683,12 +686,12 @@ export const Home2: React.FC = () => {
       ============================================================ */}
       <section id="impact" className="relative overflow-hidden bg-[#1575B3] text-white py-16 sm:py-20 scroll-mt-20">
         <div className="absolute inset-0 blueprint-grid opacity-30" />
-        <div className="absolute -top-24 left-1/4 w-80 h-80 rounded-full bg-white/10 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 right-1/4 w-80 h-80 rounded-full bg-[#003F82]/50 blur-3xl pointer-events-none" />
+        <div className="absolute -top-24 left-1/4 w-80 h-80 rounded-lgl bg-white/10 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 right-1/4 w-80 h-80 rounded-lg bg-[#003F82]/50 blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
           <Reveal className="text-center max-w-2xl mx-auto space-y-4">
-            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-full tracking-wider">
+            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-[11px] font-semibold px-3.5 py-1.5 rounded-lg tracking-wider">
               <Droplets className="w-3.5 h-3.5" />
               Our Impact
             </span>
@@ -702,7 +705,7 @@ export const Home2: React.FC = () => {
 
           {/* Glass Stat Panel */}
           <Reveal>
-            <div className="rounded-3xl bg-white/5 backdrop-blur-md border border-white/15 shadow-2xl shadow-[#003F82]/30 overflow-hidden">
+            <div className="rounded-lg bg-white/5 backdrop-blur-md border border-white/15 shadow-2xl shadow-[#003F82]/30 overflow-hidden">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 {impacts.map((imp, idx) => {
                   const IconComp = imp.icon;
@@ -714,7 +717,7 @@ export const Home2: React.FC = () => {
 
                         {/* Icon */}
                         <div className="relative">
-                          <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center shadow-lg shadow-black/10">
+                          <div className="w-14 h-14 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center shadow-lg shadow-black/10">
                             <IconComp className="w-6 h-6" />
                           </div>
                          
@@ -760,9 +763,9 @@ export const Home2: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {news.map((item, idx) => (
               <Reveal key={idx} delay={idx * 100}>
-                <article className="group bg-[#FFFFFF] rounded-2xl border border-[#DCEAF5] p-5 shadow-xs hover:shadow-xl hover:border-[#1575B3]/30 transition-all flex flex-col justify-between h-full">
+                <article className="group bg-[#FFFFFF] rounded-lg border border-[#DCEAF5] p-5 shadow-xs hover:shadow-xl hover:border-[#1575B3]/30 transition-all flex flex-col justify-between h-full">
                   {/* Image Placeholder */}
-                  <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-[#DCEAF5] bg-gradient-to-br from-[#E8F3FB] via-[#F5FAFF] to-[#DCEAF5]">
+                  <div className="relative aspect-[16/10] rounded-lg overflow-hidden border border-[#DCEAF5] bg-gradient-to-br from-[#E8F3FB] via-[#F5FAFF] to-[#DCEAF5]">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -779,7 +782,7 @@ export const Home2: React.FC = () => {
                         <span className="text-[10px] font-semibold tracking-wider">Image</span>
                       </div>
                     </div>
-                    <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[#1575B3] text-[10px] font-semibold px-2.5 py-1 rounded-full border border-[#DCEAF5]">
+                    <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-[#1575B3] text-[10px] font-semibold px-2.5 py-1 rounded-lg border border-[#DCEAF5]">
                       {item.category}
                     </span>
                   </div>
@@ -811,7 +814,7 @@ export const Home2: React.FC = () => {
           </div>
 
           <Reveal className="flex justify-center">
-            <button className="inline-flex items-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] text-white px-7 py-3.5 rounded-xl font-medium text-sm transition-all shadow-md shadow-[#1575B3]/20 hover:-translate-y-0.5 group">
+            <button className="inline-flex items-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] text-white px-7 py-3.5 rounded-lg font-medium text-sm transition-all shadow-md shadow-[#1575B3]/20 hover:-translate-y-0.5 group">
               View All Updates
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>

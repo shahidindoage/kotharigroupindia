@@ -51,11 +51,11 @@ const Reveal: React.FC<{ children: React.ReactNode; delay?: number; className?: 
 const SectionLabel: React.FC<{ children: React.ReactNode; icon?: React.ComponentType<{ className?: string }> }> = ({ children, icon }) => {
   const Icon = icon;
   return (
-    <span className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] text-[#1575B3] text-[11px] font-semibold px-3.5 py-1.5 rounded-full tracking-wider shadow-xs">
+    <span className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] text-[#1575B3] text-[11px] font-semibold px-3.5 py-1.5 rounded-lg tracking-wider shadow-xs">
       {Icon ? (
         <Icon className="w-3.5 h-3.5" />
       ) : (
-        <span className="w-1.5 h-1.5 rounded-full bg-[#1575B3]" />
+        <span className="w-1.5 h-1.5 rounded-lg bg-[#1575B3]" />
       )}
       {children}
     </span>
@@ -168,7 +168,7 @@ export const Home3: React.FC = () => {
                     key={cat.title}
                     onClick={() => setActiveCategory(idx)}
                     onMouseEnter={() => setActiveCategory(idx)}
-                    className={`w-full text-left rounded-2xl border transition-all duration-300 p-4 ${
+                    className={`w-full text-left rounded-lg border transition-all duration-300 p-4 ${
                       active
                         ? 'bg-[#FFFFFF] border-[#1575B3]/30 shadow-lg shadow-[#1575B3]/10'
                         : 'bg-transparent border-transparent hover:bg-white/70 hover:border-[#DCEAF5]'
@@ -176,7 +176,7 @@ export const Home3: React.FC = () => {
                   >
                     <div className="flex items-center gap-4">
                       <span
-                        className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold transition-colors ${
+                        className={`w-10 h-10 rounded-lg flex items-center justify-center text-sm font-bold transition-colors ${
                           active
                             ? 'bg-gradient-to-br from-[#1575B3] to-[#0E588A] text-white shadow-md shadow-[#1575B3]/25'
                             : 'bg-[#F5FAFF] border border-[#DCEAF5] text-[#5F6B7A]'
@@ -211,7 +211,7 @@ export const Home3: React.FC = () => {
 
             {/* RIGHT: Image Preview */}
             <Reveal delay={100}>
-              <div className="relative h-80 lg:h-full min-h-[24rem] rounded-3xl overflow-hidden border border-[#DCEAF5] shadow-xl shadow-[#1575B3]/10">
+              <div className="relative h-80 lg:h-full min-h-[24rem] rounded-lg overflow-hidden border border-[#DCEAF5] shadow-xl shadow-[#1575B3]/10">
                 <img
                   key={activeCategory}
                   src={categories[activeCategory].image}
@@ -222,7 +222,7 @@ export const Home3: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#003F82]/80 via-[#003F82]/15 to-transparent" />
 
-                <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#1575B3] text-[10px] font-semibold px-3 py-1.5 rounded-full border border-[#DCEAF5]">
+                <span className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-[#1575B3] text-[10px] font-semibold px-3 py-1.5 rounded-lg border border-[#DCEAF5]">
                   {categories[activeCategory].num} · {categories[activeCategory].title}
                 </span>
 
@@ -243,7 +243,7 @@ export const Home3: React.FC = () => {
                   </p>
                   <button
                     onClick={() => scrollToId('crops')}
-                    className="mt-4 inline-flex items-center gap-2 bg-white text-[#1575B3] hover:bg-[#7CC4EE] px-5 py-2.5 rounded-xl font-semibold text-xs transition-all group/link"
+                    className="mt-4 inline-flex items-center gap-2 bg-white text-[#1575B3] hover:bg-[#7CC4EE] px-5 py-2.5 rounded-lg font-semibold text-xs transition-all group/link"
                   >
                     Explore
                     <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
@@ -258,7 +258,7 @@ export const Home3: React.FC = () => {
       {/* ============================================================
           HIGHLIGHTED POINTS & KEY METRICS
       ============================================================ */}
-      <HighlightedPoints variant="green" />
+      <HighlightedPoints variant="blue" />
 
       {/* ============================================================
           CROP BASED SOLUTIONS
@@ -278,7 +278,7 @@ export const Home3: React.FC = () => {
 
             <button
               onClick={() => scrollToId('crops')}
-              className="inline-flex items-center gap-2 bg-transparent border border-[#1E8E3E] text-[#1E8E3E] hover:bg-[#1E8E3E] hover:text-white px-6 py-2.5 rounded-xl font-medium text-sm transition-all group shrink-0"
+              className="inline-flex items-center gap-2 bg-transparent border border-[#1575b3] text-[#1575b3] hover:bg-[#1E8E3E] hover:text-white px-6 py-2.5 rounded-lg font-medium text-sm transition-all group shrink-0"
             >
               View All Crops
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -290,10 +290,10 @@ export const Home3: React.FC = () => {
               <div key={crop.name} className="relative">
                 <button
                   onClick={() => scrollToId('why')}
-                  className="group relative z-10 group-hover:z-30 w-full flex items-center justify-between gap-6 rounded-2xl border border-[#DCEAF5] bg-[#FFFFFF] px-5 sm:px-8 py-5 sm:py-6 hover:bg-gradient-to-r hover:from-[#1E8E3E] hover:to-[#0F6B2B] hover:border-transparent hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                  className="group relative z-10 group-hover:z-30 w-full flex items-center justify-between gap-6 rounded-lg border border-[#DCEAF5] bg-[#FFFFFF] px-5 sm:px-8 py-5 sm:py-6 hover:bg-gradient-to-r hover:from-[#1E8E3E] hover:to-[#0F6B2B] hover:border-transparent hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
                 >
                   {/* Hover Image Card */}
-                  <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-36 sm:w-40 aspect-[16/10] rounded-2xl overflow-hidden border-4 border-white shadow-2xl shadow-black/30 -translate-x-1/2 -translate-y-1/2 scale-50 rotate-3 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 transition-all duration-300">
+                  <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-36 sm:w-40 aspect-[16/10] rounded-lg overflow-hidden border-4 border-white shadow-2xl shadow-black/30 -translate-x-1/2 -translate-y-1/2 scale-50 rotate-3 opacity-0 group-hover:opacity-100 group-hover:scale-100 group-hover:rotate-0 transition-all duration-300">
                     <img
                       src={crop.image}
                       alt={crop.name}
@@ -303,7 +303,7 @@ export const Home3: React.FC = () => {
                   </div>
 
                   <div className="flex items-center gap-4 sm:gap-6">
-                    <span className="text-sm font-bold text-[#1E8E3E] group-hover:text-[#A9DDB8] transition-colors">
+                    <span className="text-sm font-bold text-[#1575b3] group-hover:text-[#A9DDB8] transition-colors">
                       {crop.num}
                     </span>
                     <h3 className="text-xl sm:text-2xl font-semibold text-[#111111] group-hover:text-white transition-colors">
@@ -315,7 +315,7 @@ export const Home3: React.FC = () => {
                     <p className="hidden md:block text-xs font-light text-[#5F6B7A] group-hover:text-white/80 transition-colors max-w-xs text-right">
                       {crop.description}
                     </p>
-                    <ArrowRight className="w-5 h-5 text-[#1E8E3E] group-hover:text-white group-hover:translate-x-1 transition-all" />
+                    <ArrowRight className="w-5 h-5 text-[#1575b3] group-hover:text-white group-hover:translate-x-1 transition-all" />
                   </div>
                 </button>
               </div>
@@ -341,12 +341,12 @@ export const Home3: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
             <Reveal className="lg:col-span-2 h-full">
-              <div className="relative h-full min-h-[22rem] overflow-hidden rounded-3xl bg-gradient-to-br from-[#0F6B2B] via-[#1E8E3E] to-[#1575B3] text-white p-8 sm:p-10 flex flex-col justify-between">
-                <div className="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-white/10 blur-2xl pointer-events-none" />
-                <div className="absolute -bottom-24 -left-16 w-72 h-72 rounded-full bg-[#0B3D2E]/70 blur-3xl pointer-events-none" />
+              <div className="relative h-full min-h-[22rem] overflow-hidden rounded-lg bg-gradient-to-br from-[#0F6B2B] via-[#1E8E3E] to-[#1575B3] text-white p-8 sm:p-10 flex flex-col justify-between">
+                <div className="absolute -top-16 -right-16 w-56 h-56 rounded-lg bg-white/10 blur-2xl pointer-events-none" />
+                <div className="absolute -bottom-24 -left-16 w-72 h-72 rounded-lg bg-[#0B3D2E]/70 blur-3xl pointer-events-none" />
 
                 <div className="relative space-y-6">
-                  <div className="w-14 h-14 rounded-2xl bg-white/15 border border-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <div className="w-14 h-14 rounded-lg bg-white/15 border border-white/20 backdrop-blur-sm flex items-center justify-center">
                     <Sprout className="w-7 h-7" />
                   </div>
                   <div className="space-y-3">
@@ -360,12 +360,12 @@ export const Home3: React.FC = () => {
                 </div>
 
                 <div className="relative grid grid-cols-2 gap-4 mt-8">
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-4">
                     <Droplets className="w-5 h-5 text-white/80" />
                     <p className="text-2xl sm:text-3xl font-bold mt-2">60%</p>
                     <p className="text-[11px] font-light text-white/75 mt-1 tracking-wider">Water Saved</p>
                   </div>
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg p-4">
                     <TrendingUp className="w-5 h-5 text-white/80" />
                     <p className="text-2xl sm:text-3xl font-bold mt-2">30%</p>
                     <p className="text-[11px] font-light text-white/75 mt-1 tracking-wider">Higher Yield</p>
@@ -379,12 +379,12 @@ export const Home3: React.FC = () => {
                 const IconComp = ben.icon;
                 return (
                   <Reveal key={ben.label} delay={idx * 70} className="h-full">
-                    <div className="group bg-[#FFFFFF] rounded-2xl border border-[#BFE4CC] p-5 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
+                    <div className="group bg-[#FFFFFF] rounded-lg border border-[#BFE4CC] p-5 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full">
                       <div className="flex items-start justify-between gap-3">
-                        <div className="w-11 h-11 rounded-xl bg-[#F2FBF4] border border-[#BFE4CC] text-[#1E8E3E] flex items-center justify-center group-hover:bg-[#1E8E3E] group-hover:text-white transition-colors">
+                        <div className="w-11 h-11 rounded-lg bg-[#F2FBF4] border border-[#BFE4CC] text-[#1575b3] flex items-center justify-center group-hover:bg-[#1E8E3E] group-hover:text-white transition-colors">
                           <IconComp className="w-5 h-5" />
                         </div>
-                        <span className="text-[11px] font-bold text-[#1E8E3E] bg-[#F2FBF4] border border-[#BFE4CC] rounded-full px-2.5 py-1 leading-none">
+                        <span className="text-[11px] font-bold text-[#1575b3] bg-[#F2FBF4] border border-[#BFE4CC] rounded-lg px-2.5 py-1 leading-none">
                           {ben.value}
                         </span>
                       </div>
@@ -419,7 +419,7 @@ export const Home3: React.FC = () => {
                           onClick={() => scrollToId('home2-footer')}
                           className="group flex items-center gap-4 shrink-0 px-8 sm:px-10 cursor-pointer"
                         >
-                          <div className="w-11 h-11 rounded-xl bg-white/15 border border-white/25 backdrop-blur-sm flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1575B3] transition-colors shrink-0">
+                          <div className="w-11 h-11 rounded-lg bg-white/15 border border-white/25 backdrop-blur-sm flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1575B3] transition-colors shrink-0">
                             <IconComp className="w-5 h-5" />
                           </div>
                           <div className="text-left">
@@ -431,7 +431,7 @@ export const Home3: React.FC = () => {
                             </p>
                           </div>
                           <ArrowRight className="w-4 h-4 text-white/80 group-hover:translate-x-1 transition-transform shrink-0" />
-                          {/* <span className="ml-8 sm:ml-12 w-1.5 h-1.5 rounded-full bg-white/40 select-none" /> */}
+                          {/* <span className="ml-8 sm:ml-12 w-1.5 h-1.5 rounded-lg bg-white/40 select-none" /> */}
                         </button>
                       );
                     })}

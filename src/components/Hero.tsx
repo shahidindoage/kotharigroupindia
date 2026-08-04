@@ -142,7 +142,7 @@ export const Hero: React.FC<HeroProps> = ({
             </p>
             <button
               onClick={onExploreProducts}
-              className="inline-flex items-center gap-2 bg-white text-[#003F82] hover:bg-[#EAF3FA] px-8 py-3.5 rounded-xl font-semibold text-sm transition-all"
+              className="inline-flex items-center gap-2 bg-white text-[#003F82] hover:bg-[#EAF3FA] px-8 py-3.5 rounded-lg font-semibold text-sm transition-all"
             >
               Explore Products
               <ArrowRight className="w-4 h-4" />

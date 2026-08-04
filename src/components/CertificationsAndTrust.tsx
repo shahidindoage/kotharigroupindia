@@ -60,7 +60,7 @@ export const CertificationsAndTrust: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] px-3.5 py-1 rounded-full text-xs font-bold text-[#1575B3]">
+          <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] px-3.5 py-1 rounded-lg text-xs font-bold text-[#1575B3]">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>International Compliance & Safety</span>
           </div>
@@ -77,9 +77,9 @@ export const CertificationsAndTrust: React.FC = () => {
           {certs.map((c, i) => (
             <div
               key={i}
-              className="bg-[#FFFFFF] p-6 rounded-2xl border border-[#DCEAF5] shadow-xs hover:border-[#1575B3]/60 hover:shadow-md transition-all text-left space-y-3 group"
+              className="bg-[#FFFFFF] p-6 rounded-lg border border-[#DCEAF5] shadow-xs hover:border-[#1575B3]/60 hover:shadow-md transition-all text-left space-y-3 group"
             >
-              <div className="w-10 h-10 rounded-xl bg-[#F5FAFF] border border-[#DCEAF5] flex items-center justify-center text-[#1575B3] group-hover:bg-[#1575B3] group-hover:text-white transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-[#F5FAFF] border border-[#DCEAF5] flex items-center justify-center text-[#1575B3] group-hover:bg-[#1575B3] group-hover:text-white transition-colors">
                 <Award className="w-5 h-5" />
               </div>
               <div>
@@ -98,7 +98,7 @@ export const CertificationsAndTrust: React.FC = () => {
         </div>
 
         {/* Live Batch Certificate Verification Box */}
-        <div className="bg-[#FFFFFF] rounded-3xl border border-[#DCEAF5] p-6 sm:p-8 shadow-xs max-w-4xl mx-auto space-y-6">
+        <div className="bg-[#FFFFFF] rounded-lg border border-[#DCEAF5] p-6 sm:p-8 shadow-xs max-w-4xl mx-auto space-y-6">
           <div className="text-center space-y-2">
             <h3 className="text-xl font-extrabold text-[#1575B3] flex items-center justify-center gap-2">
               <FileCheck2 className="w-5 h-5" />
@@ -117,20 +117,20 @@ export const CertificationsAndTrust: React.FC = () => {
                 placeholder="Enter Batch Number (e.g., HF-2026-B882)"
                 value={certQuery}
                 onChange={(e) => setCertQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
+                className="w-full pl-10 pr-4 py-3 bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
               />
             </div>
 
             <button
               type="submit"
-              className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-6 py-3 rounded-xl font-bold text-xs shadow-sm transition shrink-0"
+              className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-6 py-3 rounded-lg font-bold text-xs shadow-sm transition shrink-0"
             >
               Verify Certificate
             </button>
           </form>
 
           {verificationResult && (
-            <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-2xl text-left space-y-2 animate-in fade-in duration-200">
+            <div className="bg-emerald-50 border border-emerald-200 p-4 rounded-lg text-left space-y-2 animate-in fade-in duration-200">
               <div className="flex items-center gap-2 text-emerald-800 text-xs font-extrabold">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>Batch Certificate Verified Authentic & Clear</span>

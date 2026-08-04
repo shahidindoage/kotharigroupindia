@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const sections = [
   { id: 'home', label: 'Home' },
@@ -52,7 +53,7 @@ export const Home3Header: React.FC = () => {
     <header className="sticky top-0 z-50 bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#BFE4CC]">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 flex items-center gap-4">
         {/* Brand Logo */}
-        <button onClick={() => handleNav('home')} className="flex items-center shrink-0" aria-label="Kothari Group Home">
+        <Link to='/home3' onClick={() => handleNav('home')} className="flex items-center shrink-0" aria-label="Kothari Group Home">
           <img
             src="https://kotharigroupindia.com/img/Kothariblue_logo.png"
             alt="Kothari Group Logo"
@@ -62,7 +63,7 @@ export const Home3Header: React.FC = () => {
               (e.target as HTMLElement).style.display = 'none';
             }}
           />
-        </button>
+        </Link>
 
         {/* Right Side: Nav + Actions (aligned to far right) */}
         <div className="ml-auto flex items-center gap-3">
@@ -86,7 +87,7 @@ export const Home3Header: React.FC = () => {
           {/* Enquire Now Button */}
           <button
             onClick={() => handleNav('home2-footer')}
-            className="hidden xl:inline-flex items-center gap-2 bg-[#1E8E3E] hover:bg-[#0F6B2B] text-white px-5 py-2.5 rounded-xl text-sm font-medium shadow-md shadow-[#1E8E3E]/15 hover:shadow-lg transition-all"
+            className="hidden xl:inline-flex items-center gap-2 bg-[#1E8E3E] hover:bg-[#0F6B2B] text-white px-5 py-2.5 rounded-lg text-sm font-medium shadow-md shadow-[#1E8E3E]/15 hover:shadow-lg transition-all"
           >
             Enquire Now
             <ArrowRight className="w-4 h-4" />
@@ -95,7 +96,7 @@ export const Home3Header: React.FC = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="xl:hidden p-2.5 text-[#0F6B2B] bg-[#EAF8EF] border border-[#BFE4CC] rounded-xl hover:bg-[#BFE4CC]/50 transition"
+            className="xl:hidden p-2.5 text-[#0F6B2B] bg-[#EAF8EF] border border-[#BFE4CC] rounded-lg hover:bg-[#BFE4CC]/50 transition"
             aria-label="Toggle Navigation Menu"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

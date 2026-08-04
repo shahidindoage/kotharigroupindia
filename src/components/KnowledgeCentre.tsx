@@ -77,7 +77,7 @@ export const KnowledgeCentre: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#DCEAF5]">
           <div className="space-y-2 max-w-2xl">
-            {/* <span className="bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+            {/* <span className="bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3 py-1 rounded-lg uppercase tracking-wider">
               Technical Resources & Specs
             </span> */}
             <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
@@ -89,10 +89,10 @@ export const KnowledgeCentre: React.FC = () => {
           </div>
 
           {/* Knowledge Centre Tabs */}
-          <div className="flex flex-wrap items-center gap-1.5 bg-[#F5FAFF] p-1.5 rounded-2xl border border-[#DCEAF5] shrink-0">
+          <div className="flex flex-wrap items-center gap-1.5 bg-[#F5FAFF] p-1.5 rounded-lg border border-[#DCEAF5] shrink-0">
             <button
               onClick={() => setActiveTab('Plumbing Pipes And Fittings')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
+              className={`px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
                 activeTab === 'Plumbing Pipes And Fittings'
                   ? 'bg-[#1575B3] text-white shadow-sm'
                   : 'text-[#5F6B7A] hover:text-[#1575B3]'
@@ -104,7 +104,7 @@ export const KnowledgeCentre: React.FC = () => {
 
             <button
               onClick={() => setActiveTab('Agri Pipes And Fittings')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
+              className={`px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
                 activeTab === 'Agri Pipes And Fittings'
                   ? 'bg-[#1575B3] text-white shadow-sm'
                   : 'text-[#5F6B7A] hover:text-[#1575B3]'
@@ -116,7 +116,7 @@ export const KnowledgeCentre: React.FC = () => {
 
             <button
               onClick={() => setActiveTab('Micro Irrigation System')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
+              className={`px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium flex items-center gap-2 transition ${
                 activeTab === 'Micro Irrigation System'
                   ? 'bg-[#1575B3] text-white shadow-sm'
                   : 'text-[#5F6B7A] hover:text-[#1575B3]'
@@ -129,12 +129,12 @@ export const KnowledgeCentre: React.FC = () => {
         </div>
 
         {/* Tab Content Display */}
-        <div className="bg-[#F5FAFF] rounded-3xl border border-[#DCEAF5] p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-xs">
+        <div className="bg-[#F5FAFF] rounded-lg border border-[#DCEAF5] p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-xs">
           
           {/* Left Text & Manual Downloads */}
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-2">
-              {/* <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#1575B3] bg-white border border-[#DCEAF5] px-2.5 py-0.5 rounded-full">
+              {/* <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#1575B3] bg-white border border-[#DCEAF5] px-2.5 py-0.5 rounded-lg">
                 {activeTab}
               </span> */}
               <h3 className="text-2xl sm:text-3xl font-medium text-[#1575B3]">
@@ -156,7 +156,7 @@ export const KnowledgeCentre: React.FC = () => {
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-light">
                 {currentContent.keySpecs.map((spec, idx) => (
-                  <div key={idx} className="flex items-start gap-2 bg-white p-3 rounded-xl border border-[#DCEAF5]">
+                  <div key={idx} className="flex items-start gap-2 bg-white p-3 rounded-lg border border-[#DCEAF5]">
                     <CheckCircle2 className="w-4 h-4 text-[#1575B3] shrink-0 mt-0.5" />
                     <span className="text-[#111111]">{spec}</span>
                   </div>
@@ -171,7 +171,7 @@ export const KnowledgeCentre: React.FC = () => {
               </h4>
               <div className="space-y-2">
                 {currentContent.guides.map((g, i) => (
-                  <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-white border border-[#DCEAF5] text-xs font-light text-[#111111]">
+                  <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-white border border-[#DCEAF5] text-xs font-light text-[#111111]">
                     <div className="flex items-center gap-2">
                       <FileText className="w-4 h-4 text-[#1575B3]" />
                       <span>{g.name}</span>
@@ -189,8 +189,8 @@ export const KnowledgeCentre: React.FC = () => {
 
           {/* Right Column Image Preview */}
           <div className="lg:col-span-5 relative">
-            <div className="rounded-2xl overflow-hidden border border-[#DCEAF5] bg-white p-3 shadow-md">
-              <div className="aspect-[4/3] rounded-xl overflow-hidden relative">
+            <div className="rounded-lg overflow-hidden border border-[#DCEAF5] bg-white p-3 shadow-md">
+              <div className="aspect-[4/3] rounded-lg overflow-hidden relative">
                 <img
                   src={currentContent.image}
                   alt={currentContent.title}
@@ -198,7 +198,7 @@ export const KnowledgeCentre: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1575B3]/40 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md p-3 rounded-xl border border-[#DCEAF5] text-xs font-medium text-[#1575B3]">
+                <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md p-3 rounded-lg border border-[#DCEAF5] text-xs font-medium text-[#1575B3]">
                   Kothari Certified Engineering Documentation
                 </div>
               </div>

@@ -98,8 +98,8 @@ export const Hero1: React.FC<HeroProps> = ({
           <div className="lg:col-span-7 space-y-6 text-left">
             
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] shadow-xs px-3.5 py-1.5 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-[#1575B3] animate-pulse" />
+            <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] shadow-xs px-3.5 py-1.5 rounded-lg">
+              <span className="w-2 h-2 rounded-lg bg-[#1575B3] animate-pulse" />
               <span className="text-xs font-bold text-[#1575B3] tracking-wide">
                 Kothari Group India • 35+ Years Of Water Management Excellence
               </span>
@@ -119,7 +119,7 @@ export const Hero1: React.FC<HeroProps> = ({
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <button
                 onClick={onExploreProducts}
-                className="flex items-center gap-2.5 bg-[#1575B3] hover:bg-[#0E588A] text-white px-6 py-3.5 rounded-xl font-bold text-sm sm:text-base shadow-lg shadow-[#1575B3]/25 hover:shadow-xl transition-all transform active:scale-98"
+                className="flex items-center gap-2.5 bg-[#1575B3] hover:bg-[#0E588A] text-white px-6 py-3.5 rounded-lg font-bold text-sm sm:text-base shadow-lg shadow-[#1575B3]/25 hover:shadow-xl transition-all transform active:scale-98"
               >
                 <span>Explore Products & Segments</span>
                 <ArrowRight className="w-4 h-4" />
@@ -127,7 +127,7 @@ export const Hero1: React.FC<HeroProps> = ({
 
               <button
                 onClick={onOpenQuoteModal}
-                className="flex items-center gap-2 bg-[#FFFFFF] hover:bg-[#F5FAFF] text-[#1575B3] border border-[#DCEAF5] hover:border-[#1575B3] px-5 py-3.5 rounded-xl font-bold text-sm sm:text-base shadow-xs hover:shadow-md transition-all"
+                className="flex items-center gap-2 bg-[#FFFFFF] hover:bg-[#F5FAFF] text-[#1575B3] border border-[#DCEAF5] hover:border-[#1575B3] px-5 py-3.5 rounded-lg font-bold text-sm sm:text-base shadow-xs hover:shadow-md transition-all"
               >
                 <FileText className="w-4 h-4 text-[#1575B3]" />
                 <span>Request Project Quotation</span>
@@ -154,10 +154,10 @@ export const Hero1: React.FC<HeroProps> = ({
 
           {/* Right Hero Column */}
           <div className="lg:col-span-5 relative">
-            <div className="relative bg-[#FFFFFF] p-3 rounded-2xl border border-[#DCEAF5] shadow-xl shadow-[#1575B3]/10 overflow-hidden group">
+            <div className="relative bg-[#FFFFFF] p-3 rounded-lg border border-[#DCEAF5] shadow-xl shadow-[#1575B3]/10 overflow-hidden group">
               
               {/* Product Hero Image */}
-              <div className="relative rounded-xl overflow-hidden aspect-[4/3] bg-gradient-to-br from-[#F5FAFF] to-[#DCEAF5]">
+              <div className="relative rounded-lg overflow-hidden aspect-[4/3] bg-gradient-to-br from-[#F5FAFF] to-[#DCEAF5]">
                 <img
                   src="/src/assets/images/hero_pipes_render_1784717744659.jpg"
                   alt="Kothari Group Piping and Micro Irrigation Solutions"
@@ -174,7 +174,7 @@ export const Hero1: React.FC<HeroProps> = ({
                     key={spot.id}
                     onClick={() => setActiveHotspot(spot.id)}
                     style={{ top: spot.top, left: spot.left }}
-                    className={`absolute -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full flex items-center justify-center transition-all ${
+                    className={`absolute -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-lg flex items-center justify-center transition-all ${
                       activeHotspot === spot.id 
                         ? 'bg-[#1575B3] text-white ring-4 ring-white shadow-lg scale-110' 
                         : 'bg-white/90 text-[#1575B3] border border-[#1575B3]/40 hover:bg-[#1575B3] hover:text-white'
@@ -187,7 +187,7 @@ export const Hero1: React.FC<HeroProps> = ({
 
                 {/* Hotspot Info Drawer Floating Box */}
                 {activeHotspot !== null && (
-                  <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-[#DCEAF5] shadow-lg text-left animate-in fade-in slide-in-from-bottom-2 duration-200">
+                  <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md p-3.5 rounded-lg border border-[#DCEAF5] shadow-lg text-left animate-in fade-in slide-in-from-bottom-2 duration-200">
                     <div className="flex items-start justify-between gap-2">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-[#1575B3]">
                         <Info className="w-3.5 h-3.5" />
@@ -205,9 +205,9 @@ export const Hero1: React.FC<HeroProps> = ({
               </div>
 
               {/* Technical Spec Badge Strip */}
-              <div className="mt-3 bg-[#F5FAFF] p-2.5 rounded-xl border border-[#DCEAF5] flex items-center justify-between text-xs font-bold text-[#5F6B7A]">
+              <div className="mt-3 bg-[#F5FAFF] p-2.5 rounded-lg border border-[#DCEAF5] flex items-center justify-between text-xs font-bold text-[#5F6B7A]">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                  <span className="w-2 h-2 rounded-lg bg-emerald-500" />
                   <span>Kothari Product Innovations</span>
                 </div>
                 <span className="text-[#1575B3] font-bold">Select Hotspots 1 - 3</span>
@@ -224,7 +224,7 @@ export const Hero1: React.FC<HeroProps> = ({
             return (
               <div 
                 key={idx}
-                className="bg-[#FFFFFF] p-4 rounded-xl border border-[#DCEAF5] shadow-xs hover:border-[#1575B3]/50 hover:shadow-md transition-all text-left flex items-start gap-3.5 group"
+                className="bg-[#FFFFFF] p-4 rounded-lg border border-[#DCEAF5] shadow-xs hover:border-[#1575B3]/50 hover:shadow-md transition-all text-left flex items-start gap-3.5 group"
               >
                 <div className="p-2.5 rounded-lg bg-[#F5FAFF] text-[#1575B3] group-hover:bg-[#1575B3] group-hover:text-white transition-colors shrink-0">
                   <IconComponent className="w-5 h-5" />

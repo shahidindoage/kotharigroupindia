@@ -77,9 +77,9 @@ function AppShell({
               alt="Kothari Group"
               className="h-20 w-auto object-contain brightness-0 invert"
             />
-            <div className="w-48 h-1 rounded-full bg-white/10 overflow-hidden relative">
+            <div className="w-48 h-1 rounded-lg bg-white/10 overflow-hidden relative">
               <div
-                className="h-full rounded-full bg-white/60"
+                className="h-full rounded-lg bg-white/60"
                 style={{ animation: 'loadBar 2.8s ease-in-out forwards' }}
               />
               <div

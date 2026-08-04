@@ -57,7 +57,7 @@ export const SectorSolutions: React.FC = () => {
                       onClick={scrollToProducts}
                       className="group flex items-center gap-4 shrink-0 px-8 sm:px-10 cursor-pointer"
                     >
-                      {/* <div className="w-11 h-11 rounded-xl bg-white/15 border border-white/25 backdrop-blur-sm flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1575B3] transition-colors shrink-0">
+                      {/* <div className="w-11 h-11 rounded-lg bg-white/15 border border-white/25 backdrop-blur-sm flex items-center justify-center text-white group-hover:bg-white group-hover:text-[#1575B3] transition-colors shrink-0">
                         <IconComp className="w-5 h-5" />
                       </div> */}
                       <div className="text-left">
@@ -69,7 +69,7 @@ export const SectorSolutions: React.FC = () => {
                         </p> */}
                       </div>
                       {/* <ArrowRight className="w-4 h-4 text-white/80 group-hover:translate-x-1 transition-transform shrink-0" /> */}
-                      {/* <span className="ml-8 sm:ml-12 w-1.5 h-1.5 rounded-full bg-white/40 select-none" /> */}
+                      {/* <span className="ml-8 sm:ml-12 w-1.5 h-1.5 rounded-lg bg-white/40 select-none" /> */}
                     </button>
                   );
                 })}

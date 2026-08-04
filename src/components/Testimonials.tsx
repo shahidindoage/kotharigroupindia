@@ -73,7 +73,7 @@ export const Testimonials: React.FC<{ variant?: Variant }> = ({ variant = 'blue'
           {reviews.map((rev, idx) => (
             <div
               key={idx}
-              className={`p-6 rounded-2xl border shadow-xs flex flex-col justify-between space-y-4 transition-all ${t.card}`}
+              className={`p-6 rounded-lg border shadow-xs flex flex-col justify-between space-y-4 transition-all ${t.card}`}
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -95,7 +95,7 @@ export const Testimonials: React.FC<{ variant?: Variant }> = ({ variant = 'blue'
               </div>
 
               <div className={`pt-4 border-t flex items-center gap-3 ${t.divider}`}>
-                <div className={`w-10 h-10 rounded-full text-white font-medium text-sm flex items-center justify-center shrink-0 ${t.avatar}`}>
+                <div className={`w-10 h-10 rounded-lg text-white font-medium text-sm flex items-center justify-center shrink-0 ${t.avatar}`}>
                   {rev.name.charAt(0)}
                 </div>
                 <div>

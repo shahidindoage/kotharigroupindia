@@ -42,9 +42,9 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
         
         {/* Top Newsletter & Technical Bulletin CTA Box */}
-        <div className="bg-[#F5FAFF] rounded-3xl border border-[#DCEAF5] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xs">
+        <div className="bg-[#F5FAFF] rounded-lg border border-[#DCEAF5] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xs">
           <div className="space-y-1.5 max-w-xl">
-            {/* <span className="bg-[#1575B3] text-white text-[10px] font-medium uppercase tracking-wider px-2.5 py-0.5 rounded-full">
+            {/* <span className="bg-[#1575B3] text-white text-[10px] font-medium uppercase tracking-wider px-2.5 py-0.5 rounded-lg">
               Kothari Technical Bulletin
             </span> */}
             <h3 className="text-xl sm:text-2xl font-medium text-[#1575B3]">
@@ -62,11 +62,11 @@ export const Footer: React.FC<FooterProps> = ({
               placeholder="Enter your email address..."
               value={newsletterEmail}
               onChange={(e) => setNewsletterEmail(e.target.value)}
-              className="px-4 py-3 bg-[#FFFFFF] border border-[#DCEAF5] rounded-xl text-xs font-light text-[#111111] placeholder-[#5F6B7A] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30 w-full lg:w-64"
+              className="px-4 py-3 bg-[#FFFFFF] border border-[#DCEAF5] rounded-lg text-xs font-light text-[#111111] placeholder-[#5F6B7A] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30 w-full lg:w-64"
             />
             <button
               type="submit"
-              className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-3 rounded-xl font-medium text-xs shadow-sm transition shrink-0"
+              className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-3 rounded-lg font-medium text-xs shadow-sm transition shrink-0"
             >
               {subscribed ? 'Subscribed!' : 'Subscribe'}
             </button>

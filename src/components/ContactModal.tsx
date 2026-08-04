@@ -30,19 +30,19 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-[#FFFFFF] rounded-3xl border border-[#DCEAF5] shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative text-left space-y-6">
+      <div className="bg-[#FFFFFF] rounded-lg border border-[#DCEAF5] shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative text-left space-y-6">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-xl bg-[#F5FAFF] border border-[#DCEAF5] text-[#5F6B7A] hover:text-[#1575B3] transition"
+          className="absolute top-5 right-5 p-2 rounded-lg bg-[#F5FAFF] border border-[#DCEAF5] text-[#5F6B7A] hover:text-[#1575B3] transition"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
         <div className="space-y-1 pr-8">
-          <span className="text-[10px] font-extrabold uppercase text-[#1575B3] bg-[#F5FAFF] border border-[#DCEAF5] px-2.5 py-0.5 rounded-full">
+          <span className="text-[10px] font-extrabold uppercase text-[#1575B3] bg-[#F5FAFF] border border-[#DCEAF5] px-2.5 py-0.5 rounded-lg">
             Kothari Group India
           </span>
           <h3 className="text-2xl font-extrabold text-[#1575B3]">
@@ -54,7 +54,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
         </div>
 
         {submitted ? (
-          <div className="bg-[#F5FAFF] border border-emerald-500/30 rounded-2xl p-8 text-center space-y-3">
+          <div className="bg-[#F5FAFF] border border-emerald-500/30 rounded-lg p-8 text-center space-y-3">
             <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
             <h4 className="text-xl font-extrabold text-[#1575B3]">
               Thank You For Reaching Out!
@@ -74,7 +74,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   placeholder="e.g. Rajesh Patil"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
+                  className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
                 />
               </div>
 
@@ -86,7 +86,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   placeholder="e.g. +91 98765 43210"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
+                  className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
                 />
               </div>
 
@@ -97,7 +97,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   placeholder="e.g. name@company.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
+                  className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
                 />
               </div>
 
@@ -106,7 +106,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 <select
                   value={formData.state}
                   onChange={(e) => setFormData({ ...formData, state: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
+                  className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
                 >
                   <option value="Maharashtra">Maharashtra</option>
                   <option value="Gujarat">Gujarat</option>
@@ -124,7 +124,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               <select
                 value={formData.category}
                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
+                className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
               >
                 <option value="Plumbing Pipes & fittings">Plumbing Pipes & fittings</option>
                 <option value="Agri Pipes & fittings">Agri Pipes & fittings</option>
@@ -140,7 +140,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 placeholder="Specify requirements, pipe sizes, or land acreage..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
+                className="w-full px-3.5 py-2.5 bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg text-xs font-bold text-[#111111] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30"
               />
             </div>
 
@@ -152,7 +152,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
               <button
                 type="submit"
-                className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-6 py-2.5 rounded-xl font-bold text-xs shadow-md transition flex items-center gap-2"
+                className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-6 py-2.5 rounded-lg font-bold text-xs shadow-md transition flex items-center gap-2"
               >
                 <Send className="w-3.5 h-3.5" />
                 <span>Send Message</span>

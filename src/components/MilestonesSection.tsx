@@ -53,7 +53,7 @@ export const MilestonesSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          {/* <span className="bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-2xs">
+          {/* <span className="bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3.5 py-1 rounded-lg uppercase tracking-wider shadow-2xs">
             Our Journey & Growth
           </span> */}
           <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
@@ -75,14 +75,14 @@ export const MilestonesSection: React.FC = () => {
               return (
                 <div
                   key={i}
-                  className="bg-[#F5FAFF] rounded-2xl border border-[#DCEAF5] p-6 shadow-xs hover:shadow-xl hover:border-[#1575B3] transition-all flex flex-col justify-between space-y-4 group"
+                  className="bg-[#F5FAFF] rounded-lg border border-[#DCEAF5] p-6 shadow-xs hover:shadow-xl hover:border-[#1575B3] transition-all flex flex-col justify-between space-y-4 group"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-2xl sm:text-3xl font-medium text-[#1575B3] bg-white px-3 py-1 rounded-xl border border-[#DCEAF5]">
+                      <span className="text-2xl sm:text-3xl font-medium text-[#1575B3] bg-white px-3 py-1 rounded-lg border border-[#DCEAF5]">
                         {m.year}
                       </span>
-                      {/* <div className="w-10 h-10 rounded-xl bg-[#1575B3] text-white flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
+                      {/* <div className="w-10 h-10 rounded-lg bg-[#1575B3] text-white flex items-center justify-center shadow-xs group-hover:scale-110 transition-transform">
                         <IconComp className="w-5 h-5" />
                       </div> */}
                     </div>

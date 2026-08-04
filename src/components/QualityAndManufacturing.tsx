@@ -75,7 +75,7 @@ export const QualityAndManufacturing: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] px-3.5 py-1 rounded-full text-xs font-bold text-[#1575B3]">
+          <div className="inline-flex items-center gap-2 bg-[#FFFFFF] border border-[#DCEAF5] px-3.5 py-1 rounded-lg text-xs font-bold text-[#1575B3]">
             <ShieldCheck className="w-3.5 h-3.5" />
             <span>Precision Manufacturing Discipline</span>
           </div>
@@ -94,9 +94,9 @@ export const QualityAndManufacturing: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="bg-[#FFFFFF] p-6 rounded-2xl border border-[#DCEAF5] shadow-xs hover:border-[#1575B3]/60 hover:shadow-md transition-all text-left space-y-3 group"
+                className="bg-[#FFFFFF] p-6 rounded-lg border border-[#DCEAF5] shadow-xs hover:border-[#1575B3]/60 hover:shadow-md transition-all text-left space-y-3 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#F5FAFF] border border-[#DCEAF5] flex items-center justify-center text-[#1575B3] group-hover:bg-[#1575B3] group-hover:text-white transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-[#F5FAFF] border border-[#DCEAF5] flex items-center justify-center text-[#1575B3] group-hover:bg-[#1575B3] group-hover:text-white transition-colors">
                   <IconComp className="w-5 h-5" />
                 </div>
                 <h3 className="text-base font-extrabold text-[#1575B3]">
@@ -111,7 +111,7 @@ export const QualityAndManufacturing: React.FC = () => {
         </div>
 
         {/* Interactive Quality Testing Laboratory Simulation */}
-        <div className="bg-[#FFFFFF] rounded-3xl border border-[#DCEAF5] p-6 sm:p-8 shadow-xs space-y-6">
+        <div className="bg-[#FFFFFF] rounded-lg border border-[#DCEAF5] p-6 sm:p-8 shadow-xs space-y-6">
           <div className="border-b border-[#DCEAF5] pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <h3 className="text-lg font-extrabold text-[#1575B3] flex items-center gap-2">
@@ -122,7 +122,7 @@ export const QualityAndManufacturing: React.FC = () => {
                 Batch Verification Conducted Every 2 Hours On Extrusion Lines
               </p>
             </div>
-            <span className="text-xs font-bold bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] px-3 py-1.5 rounded-xl self-start sm:self-auto">
+            <span className="text-xs font-bold bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] px-3 py-1.5 rounded-lg self-start sm:self-auto">
               ISO 17025 Accredited Laboratory
             </span>
           </div>
@@ -138,7 +138,7 @@ export const QualityAndManufacturing: React.FC = () => {
                   <button
                     key={idx}
                     onClick={() => setActiveTest(idx)}
-                    className={`w-full p-4 rounded-xl text-left border transition-all ${
+                    className={`w-full p-4 rounded-lg text-left border transition-all ${
                       active
                         ? 'bg-[#1575B3] text-white border-[#1575B3] shadow-md'
                         : 'bg-[#F5FAFF] text-[#111111] border-[#DCEAF5] hover:border-[#1575B3]'
@@ -160,7 +160,7 @@ export const QualityAndManufacturing: React.FC = () => {
             </div>
 
             {/* Test Visual Display Box */}
-            <div className="lg:col-span-7 bg-[#F5FAFF] p-6 rounded-2xl border border-[#DCEAF5] space-y-4 text-left">
+            <div className="lg:col-span-7 bg-[#F5FAFF] p-6 rounded-lg border border-[#DCEAF5] space-y-4 text-left">
               <div className="flex justify-between items-start">
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#1575B3] bg-white border border-[#DCEAF5] px-2 py-0.5 rounded">
@@ -170,13 +170,13 @@ export const QualityAndManufacturing: React.FC = () => {
                     {tests[activeTest].title}
                   </h4>
                 </div>
-                <div className="bg-emerald-100 text-emerald-800 border border-emerald-300 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                <div className="bg-emerald-100 text-emerald-800 border border-emerald-300 px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" />
                   <span>Verified Safe</span>
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 text-xs bg-white p-3.5 rounded-xl border border-[#DCEAF5]">
+              <div className="grid grid-cols-2 gap-3 text-xs bg-white p-3.5 rounded-lg border border-[#DCEAF5]">
                 <div>
                   <span className="text-[#5F6B7A] font-bold block">Test Standard:</span>
                   <span className="font-extrabold text-[#111111]">{tests[activeTest].standard}</span>

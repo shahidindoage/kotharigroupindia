@@ -138,7 +138,7 @@ export const Home3Hero: React.FC = () => {
           {RAIN_DROPS.map((d, i) => (
             <span
               key={i}
-              className="absolute top-0 w-[2px] rounded-full bg-gradient-to-b from-transparent via-[#9FE0F5] to-[#5FB2E6]"
+              className="absolute top-0 w-[2px] rounded-lg bg-gradient-to-b from-transparent via-[#9FE0F5] to-[#5FB2E6]"
               style={{
                 left: `${d.left}%`,
                 height: `${d.height}px`,
@@ -157,7 +157,7 @@ export const Home3Hero: React.FC = () => {
 
           <div className="relative max-w-3xl text-center space-y-6">
             <div
-              className=" text-[#fff] inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 text-xs font-medium tracking-wide"
+              className=" text-[#fff] inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-4 py-1.5 text-xs font-medium tracking-wide"
               style={{ animation: 'fadeSlideUp 0.8s 0.1s both' }}
             >
               <Sprout className="w-4 h-4 text-[#A9DDB8]" />
@@ -184,7 +184,7 @@ export const Home3Hero: React.FC = () => {
             <div style={{ animation: 'fadeSlideUp 0.8s 0.4s both' }}>
               <button
                 onClick={() => scrollToId('products')}
-                className="inline-flex items-center gap-2 bg-white text-[#1575B3] hover:bg-[#7CC4EE] px-8 py-4 rounded-xl font-semibold text-sm transition-all shadow-lg hover:-translate-y-0.5 group"
+                className="inline-flex items-center gap-2 bg-white text-[#1575B3] hover:bg-[#7CC4EE] px-8 py-4 rounded-lg font-semibold text-sm transition-all shadow-lg hover:-translate-y-0.5 group"
               >
                 Explore Solutions
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

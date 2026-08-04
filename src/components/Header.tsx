@@ -122,7 +122,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Enquire Now Button */}
           <button
             onClick={onOpenQuoteModal}
-            className="hidden lg:inline-flex items-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] text-white px-4 py-2.5 rounded-xl font-medium text-xs sm:text-sm shadow-md shadow-[#1575B3]/15 hover:shadow-lg transition-all transform active:scale-98"
+            className="hidden lg:inline-flex items-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] text-white px-4 py-2.5 rounded-lg font-medium text-xs sm:text-sm shadow-md shadow-[#1575B3]/15 hover:shadow-lg transition-all transform active:scale-98"
           >
             <ArrowRight className="w-4 h-4" />
             <span>Enquire Now</span>
@@ -131,7 +131,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 text-[#1575B3] bg-[#F5FAFF] border border-[#DCEAF5] rounded-xl hover:bg-[#DCEAF5]/50 transition"
+            className="lg:hidden p-2.5 text-[#1575B3] bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg hover:bg-[#DCEAF5]/50 transition"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

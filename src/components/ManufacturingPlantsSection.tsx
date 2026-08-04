@@ -46,7 +46,7 @@ export const ManufacturingPlantsSection: React.FC = () => {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#DCEAF5]">
           <div className="space-y-2">
-            {/* <span className="bg-[#FFFFFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-2xs">
+            {/* <span className="bg-[#FFFFFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3 py-1 rounded-lg uppercase tracking-wider shadow-2xs">
               Infrastructure & Production
             </span> */}
             <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
@@ -63,7 +63,7 @@ export const ManufacturingPlantsSection: React.FC = () => {
           {plantImages.map((img, idx) => (
             <div
               key={idx}
-              className="group bg-[#FFFFFF] rounded-3xl border border-[#DCEAF5] overflow-hidden shadow-sm hover:shadow-2xl hover:border-[#1575B3] transition-all duration-300 flex flex-col cursor-pointer"
+              className="group bg-[#FFFFFF] rounded-lg border border-[#DCEAF5] overflow-hidden shadow-sm hover:shadow-2xl hover:border-[#1575B3] transition-all duration-300 flex flex-col cursor-pointer"
               onClick={() => setSelectedImage({ src: img.fallbackSrc, title: img.title, location: img.location })}
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-[#DCEAF5]">
@@ -76,14 +76,14 @@ export const ManufacturingPlantsSection: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                 
                 <div className="absolute top-4 left-4">
-                  <span className="bg-[#FFFFFF]/90 backdrop-blur-md text-[#1575B3] text-xs font-medium px-3 py-1 rounded-full border border-[#DCEAF5] flex items-center gap-1.5 shadow-xs">
+                  <span className="bg-[#FFFFFF]/90 backdrop-blur-md text-[#1575B3] text-xs font-medium px-3 py-1 rounded-lg border border-[#DCEAF5] flex items-center gap-1.5 shadow-xs">
                     <MapPin className="w-3.5 h-3.5" />
                     {img.location}
                   </span>
                 </div>
 
                 <div className="absolute top-4 right-4">
-                  <div className="p-2.5 rounded-full bg-white/80 hover:bg-white text-[#1575B3] backdrop-blur-md transition shadow-md">
+                  <div className="p-2.5 rounded-lg bg-white/80 hover:bg-white text-[#1575B3] backdrop-blur-md transition shadow-md">
                     <Maximize2 className="w-4 h-4" />
                   </div>
                 </div>
@@ -113,17 +113,17 @@ export const ManufacturingPlantsSection: React.FC = () => {
           onClick={() => setSelectedImage(null)}
         >
           <div
-            className="relative max-w-5xl w-full bg-[#FFFFFF] rounded-3xl overflow-hidden border border-[#DCEAF5] shadow-2xl space-y-4 p-4 text-left"
+            className="relative max-w-5xl w-full bg-[#FFFFFF] rounded-lg overflow-hidden border border-[#DCEAF5] shadow-2xl space-y-4 p-4 text-left"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 z-10 p-2.5 rounded-full bg-black/50 hover:bg-black text-white backdrop-blur-md transition"
+              className="absolute top-4 right-4 z-10 p-2.5 rounded-lg bg-black/50 hover:bg-black text-white backdrop-blur-md transition"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="aspect-[16/10] sm:aspect-[16/9] w-full bg-black rounded-2xl overflow-hidden">
+            <div className="aspect-[16/10] sm:aspect-[16/9] w-full bg-black rounded-lg overflow-hidden">
               <img
                 src={selectedImage.src}
                 alt={selectedImage.title}

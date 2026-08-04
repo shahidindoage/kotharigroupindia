@@ -50,7 +50,7 @@ export const HighlightedPoints: React.FC<{ variant?: Variant }> = ({ variant = '
     <section className={`py-12 text-white text-left ${t}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          {/* <span className="bg-white/15 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          {/* <span className="bg-white/15 text-white text-xs font-bold px-3 py-1 rounded-lg uppercase tracking-wider">
             Kothari Impact & Scale
           </span> */}
           {/* <h2 className="text-2xl sm:text-3xl font-extrabold text-white capitalize">
@@ -64,13 +64,13 @@ export const HighlightedPoints: React.FC<{ variant?: Variant }> = ({ variant = '
             return (
               <div
                 key={i}
-                className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 space-y-3"
+                className="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20 space-y-3"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-3xl sm:text-4xl font-extrabold text-white">
                     {st.number} <span className="text-base font-bold text-white/80">{st.unit}</span>
                   </span>
-                  {/* <div className="p-2.5 rounded-xl bg-white/15 text-white">
+                  {/* <div className="p-2.5 rounded-lg bg-white/15 text-white">
                     <IconComp className="w-5 h-5" />
                   </div> */}
                 </div>

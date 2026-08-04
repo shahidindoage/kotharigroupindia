@@ -30,19 +30,19 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, onClose }) => 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in duration-200">
-      <div className="bg-[#FFFFFF] rounded-3xl border border-[#DCEAF5] shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative text-left space-y-6">
+      <div className="bg-[#FFFFFF] rounded-lg border border-[#DCEAF5] shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative text-left space-y-6">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-xl bg-[#F5FAFF] border border-[#DCEAF5] text-[#5F6B7A] hover:text-[#1575B3] transition"
+          className="absolute top-5 right-5 p-2 rounded-lg bg-[#F5FAFF] border border-[#DCEAF5] text-[#5F6B7A] hover:text-[#1575B3] transition"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Modal Header */}
         <div className="space-y-1 pr-8">
-          <span className="text-[10px] font-extrabold uppercase text-[#1575B3] bg-[#F5FAFF] border border-[#DCEAF5] px-2.5 py-0.5 rounded-full">
+          <span className="text-[10px] font-extrabold uppercase text-[#1575B3] bg-[#F5FAFF] border border-[#DCEAF5] px-2.5 py-0.5 rounded-lg">
             Kothari Careers
           </span>
           <h3 className="text-2xl font-extrabold text-[#1575B3]">
@@ -54,7 +54,7 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {applied ? (
-          <div className="bg-[#F5FAFF] border border-emerald-500/30 rounded-2xl p-8 text-center space-y-3">
+          <div className="bg-[#F5FAFF] border border-emerald-500/30 rounded-lg p-8 text-center space-y-3">
             <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
             <h4 className="text-xl font-extrabold text-[#1575B3]">
               Application Received!
@@ -76,7 +76,7 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, onClose }) => 
                   <button
                     key={i}
                     onClick={() => setSelectedRole(op.title)}
-                    className={`p-3 rounded-xl border text-left transition ${
+                    className={`p-3 rounded-lg border text-left transition ${
                       selectedRole === op.title
                         ? 'bg-[#F5FAFF] border-[#1575B3] ring-1 ring-[#1575B3]'
                         : 'bg-white border-[#DCEAF5] hover:border-[#1575B3]/50'
@@ -90,7 +90,7 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, onClose }) => 
             </div>
 
             {/* Quick Application Form */}
-            <form onSubmit={handleApply} className="space-y-3 bg-[#F5FAFF] p-4 rounded-2xl border border-[#DCEAF5]">
+            <form onSubmit={handleApply} className="space-y-3 bg-[#F5FAFF] p-4 rounded-lg border border-[#DCEAF5]">
               <h4 className="text-xs font-extrabold text-[#1575B3]">
                 Apply For: <span className="text-[#111111]">{selectedRole}</span>
               </h4>
@@ -100,25 +100,25 @@ export const CareerModal: React.FC<CareerModalProps> = ({ isOpen, onClose }) => 
                   type="text"
                   required
                   placeholder="Your Full Name *"
-                  className="px-3.5 py-2 bg-white border border-[#DCEAF5] rounded-xl text-xs font-bold text-[#111111]"
+                  className="px-3.5 py-2 bg-white border border-[#DCEAF5] rounded-lg text-xs font-bold text-[#111111]"
                 />
                 <input
                   type="email"
                   required
                   placeholder="Your Email Address *"
-                  className="px-3.5 py-2 bg-white border border-[#DCEAF5] rounded-xl text-xs font-bold text-[#111111]"
+                  className="px-3.5 py-2 bg-white border border-[#DCEAF5] rounded-lg text-xs font-bold text-[#111111]"
                 />
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="flex-1 bg-white border border-[#DCEAF5] p-2.5 rounded-xl text-xs font-bold text-[#5F6B7A] flex items-center justify-between">
+                <div className="flex-1 bg-white border border-[#DCEAF5] p-2.5 rounded-lg text-xs font-bold text-[#5F6B7A] flex items-center justify-between">
                   <span>Upload Resume (PDF / DOCX)</span>
                   <Upload className="w-4 h-4 text-[#1575B3]" />
                 </div>
 
                 <button
                   type="submit"
-                  className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-2.5 rounded-xl font-bold text-xs shadow-sm transition shrink-0"
+                  className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-2.5 rounded-lg font-bold text-xs shadow-sm transition shrink-0"
                 >
                   Submit Application
                 </button>

@@ -31,7 +31,7 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 bg-[#F5FAFF] border border-[#DCEAF5] px-3.5 py-1 rounded-full text-xs font-bold text-[#1575B3]">
+          <div className="inline-flex items-center gap-2 bg-[#F5FAFF] border border-[#DCEAF5] px-3.5 py-1 rounded-lg text-xs font-bold text-[#1575B3]">
             <Globe className="w-3.5 h-3.5" />
             <span>Global Infrastructure Footprint</span>
           </div>
@@ -49,7 +49,7 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+              className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
                 selectedCategory === cat
                   ? 'bg-[#1575B3] text-white shadow-md shadow-[#1575B3]/20'
                   : 'bg-[#F5FAFF] text-[#5F6B7A] border border-[#DCEAF5] hover:border-[#1575B3]'
@@ -65,7 +65,7 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-[#F5FAFF] rounded-2xl border border-[#DCEAF5] overflow-hidden shadow-xs hover:border-[#1575B3]/60 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group text-left"
+              className="bg-[#F5FAFF] rounded-lg border border-[#DCEAF5] overflow-hidden shadow-xs hover:border-[#1575B3]/60 hover:shadow-lg transition-all duration-300 flex flex-col justify-between group text-left"
             >
               <div>
                 {/* Project Image Banner */}
@@ -106,7 +106,7 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({
                   </p>
 
                   {/* Highlights Bullet List */}
-                  <div className="bg-white p-3 rounded-xl border border-[#DCEAF5] space-y-1.5 text-xs">
+                  <div className="bg-white p-3 rounded-lg border border-[#DCEAF5] space-y-1.5 text-xs">
                     <span className="font-bold text-[#111111] block">
                       Key Engineering Outcomes:
                     </span>
@@ -129,7 +129,7 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({
 
                 <button
                   onClick={onOpenQuoteModal}
-                  className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-3.5 py-2 rounded-xl font-bold flex items-center gap-1.5 transition"
+                  className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-3.5 py-2 rounded-lg font-bold flex items-center gap-1.5 transition"
                 >
                   <span>Request Project Specs</span>
                   <ArrowRight className="w-3.5 h-3.5" />

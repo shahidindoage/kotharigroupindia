@@ -48,7 +48,7 @@ export const WhyKothari: React.FC = () => {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          {/* <span className="bg-[#FFFFFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3.5 py-1 rounded-full uppercase tracking-wider shadow-2xs">
+          {/* <span className="bg-[#FFFFFF] border border-[#DCEAF5] text-[#1575B3] text-xs font-bold px-3.5 py-1 rounded-lg uppercase tracking-wider shadow-2xs">
             Why Choose Kothari Group?
           </span> */}
           <h2 className="text-3xl sm:text-4xl font-medium text-[#1575B3]">
@@ -67,10 +67,10 @@ us unique?
             return (
               <div
                 key={index}
-                className="bg-[#FFFFFF] p-6 rounded-2xl border border-[#DCEAF5] shadow-xs hover:border-[#1575B3] hover:shadow-lg transition-all text-left flex flex-col justify-between space-y-4 group"
+                className="bg-[#FFFFFF] p-6 rounded-lg border border-[#DCEAF5] shadow-xs hover:border-[#1575B3] hover:shadow-lg transition-all text-left flex flex-col justify-between space-y-4 group"
               >
                 <div className="space-y-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#ffff] text-[#1575B3] border border-[#DCEAF5] flex items-center justify-center group-hover:bg-[#1575B3] group-hover:text-white transition-colors shadow-2xs">
+                  <div className="w-12 h-12 rounded-lg bg-[#ffff] text-[#1575B3] border border-[#DCEAF5] flex items-center justify-center group-hover:bg-[#1575B3] group-hover:text-white transition-colors shadow-2xs">
                     <IconComponent className="w-6 h-6" />
                   </div>
 
