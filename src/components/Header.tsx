@@ -3,6 +3,7 @@ import {
   Menu,
   X,
   ChevronRight,
+  ChevronDown,
   FileText,
   Sparkles,
   Briefcase,
@@ -24,6 +25,12 @@ interface HeaderProps {
   onOpenCareerModal?: () => void;
 }
 
+interface MenuItem {
+  id?: string;
+  label: string;
+  children?: { id: string; label: string }[];
+}
+
 export const Header: React.FC<HeaderProps> = ({
   onOpenQuoteModal,
   onSelectTab,
@@ -34,19 +41,61 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenCareerModal
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
 
-  const navItems = [
-    { id: 'home', label: 'Home', url: '/' },
-    { id: 'categories', label: 'Products', url: '/' },
-    { id: 'our-categories', label: 'Solutions', url: '/' },
-    { id: 'sectors', label: 'Industries', url: '/' },
-    { id: 'knowledge-centre', label: 'Resources', url: '/' },
-    { id: 'dealer-locator', label: 'Dealer Locator', url: '/' },
-    { id: 'contact', label: 'Contact Us', url: '/' }
+  const navItems: MenuItem[] = [
+    { id: 'home', label: 'Home' },
+    { id: 'why-kothari', label: 'About Us' },
+    {
+      id: 'categories',
+      label: 'Products',
+      children: [
+        { id: 'our-categories', label: 'Agri Pipes' },
+        { id: 'our-categories', label: 'Plumbing Pipes & Fittings' },
+        { id: 'our-categories', label: 'SWR Pipes & Fittings' },
+        { id: 'our-categories', label: 'CPVC Pipes & Fittings' },
+        { id: 'our-categories', label: 'Accessories' }
+      ]
+    },
+    {
+      id: 'sectors',
+      label: 'Solutions',
+      children: [
+        { id: 'sectors', label: 'Agriculture' },
+        { id: 'sectors', label: 'Infrastructure' },
+        { id: 'sectors', label: 'Residential' },
+        { id: 'sectors', label: 'Commercial' },
+        { id: 'sectors', label: 'Industrial' },
+        { id: 'sectors', label: 'Municipal' }
+      ]
+    },
+    {
+      id: 'projects',
+      label: 'Industries',
+      children: [
+        { id: 'projects', label: 'Case Studies' },
+        { id: 'manufacturing-plants', label: 'Project Gallery' },
+        { id: 'certifications', label: 'Certifications' }
+      ]
+    },
+    {
+      id: 'knowledge-centre',
+      label: 'Resources',
+      children: [
+        { id: 'knowledge-centre', label: 'Catalogues' },
+        { id: 'knowledge-centre', label: 'Technical Data' },
+        { id: 'certifications', label: 'Certifications' },
+        { id: 'downloads', label: 'Downloads' }
+      ]
+    },
+    { id: 'dealer-locator', label: 'Dealer Locator' },
+    { id: 'contact', label: 'Contact Us' }
   ];
 
-  const handleNavClick = (id: string) => {
+  const handleNavClick = (id?: string) => {
+    if (!id) return;
     setMobileMenuOpen(false);
+    setOpenMenu(null);
     if (id === 'home') {
       onSelectTab('hero');
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -56,7 +105,7 @@ export const Header: React.FC<HeaderProps> = ({
       onOpenContactModal();
       return;
     }
-    if (id === 'dealer-locator') {
+    if (id === 'dealer-locator' || id === 'downloads') {
       onSelectTab(id);
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
       return;
@@ -71,6 +120,8 @@ export const Header: React.FC<HeaderProps> = ({
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const isActiveItem = (item: MenuItem) => (item.id ? activeSection === item.id : false);
 
   return (
     <header className="sticky top-0 z-50 bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#DCEAF5] transition-all">
@@ -99,30 +150,65 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Right Side: Nav + Actions (aligned to far right) */}
         <div className="ml-auto flex items-center gap-3">
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.id;
-              return (
-                <Link
-                to={item.url}
+          <nav className="hidden xl:flex items-center gap-0.5">
+            {navItems.map((item) =>
+              item.children ? (
+                <div
+                  key={item.label}
+                  className="relative"
+                  onMouseEnter={() => setOpenMenu(item.label)}
+                  onMouseLeave={() => setOpenMenu(null)}
+                >
+                  <button
+                    onClick={() => handleNavClick(item.id)}
+                    className={`flex items-center gap-1 px-3.5 py-2 rounded-lg text-base font-light transition-all duration-200 ${
+                      isActiveItem(item)
+                        ? 'text-[#1575B3]'
+                        : 'text-[#5F6B7A] hover:text-[#1575B3] hover:bg-[#F5FAFF]/60'
+                    }`}
+                  >
+                    {item.label}
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-300 ${openMenu === item.label ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+
+                  {openMenu === item.label && (
+                    <div className="absolute left-0 top-full pt-2 w-60">
+                      <div className="bg-white rounded-2xl border border-[#DCEAF5] shadow-xl p-2 space-y-0.5">
+                        {item.children.map((child) => (
+                          <button
+                            key={child.label}
+                            onClick={() => handleNavClick(child.id)}
+                            className="w-full text-left px-3.5 py-2.5 rounded-lg text-sm font-medium text-[#111111] hover:bg-[#F5FAFF] hover:text-[#1575B3] transition-colors"
+                          >
+                            {child.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
                   className={`px-3.5 py-2 rounded-lg text-base font-light transition-all duration-200 ${
-                    isActive 
-                      ? 'text-[#1575B3] ' 
+                    isActiveItem(item)
+                      ? 'text-[#1575B3]'
                       : 'text-[#5F6B7A] hover:text-[#1575B3] hover:bg-[#F5FAFF]/60'
                   }`}
                 >
                   {item.label}
-                </Link>
-              );
-            })}
+                </button>
+              )
+            )}
           </nav>
 
           {/* Enquire Now Button */}
           <button
             onClick={onOpenQuoteModal}
-            className="hidden lg:inline-flex items-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] text-white px-4 py-2.5 rounded-lg font-medium text-xs sm:text-sm shadow-md shadow-[#1575B3]/15 hover:shadow-lg transition-all transform active:scale-98"
+            className="hidden xl:inline-flex items-center gap-2 bg-[#1575B3] hover:bg-[#0E588A] text-white px-4 py-2.5 rounded-lg font-medium text-xs sm:text-sm shadow-md shadow-[#1575B3]/15 hover:shadow-lg transition-all transform active:scale-98"
           >
             <ArrowRight className="w-4 h-4" />
             <span>Enquire Now</span>
@@ -131,7 +217,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2.5 text-[#1575B3] bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg hover:bg-[#DCEAF5]/50 transition"
+            className="xl:hidden p-2.5 text-[#1575B3] bg-[#F5FAFF] border border-[#DCEAF5] rounded-lg hover:bg-[#DCEAF5]/50 transition"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -141,9 +227,34 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-[#DCEAF5] px-4 py-4 space-y-3 shadow-xl animate-in slide-in-from-top-2 duration-200">
-          <div className="grid grid-cols-1 gap-1">
-            {navItems.map((item) => (
+        <div className="xl:hidden bg-white border-b border-[#DCEAF5] px-4 py-4 space-y-1 shadow-xl animate-in slide-in-from-top-2 duration-200">
+          {navItems.map((item) =>
+            item.children ? (
+              <div key={item.label}>
+                <button
+                  onClick={() => setOpenMenu(openMenu === item.label ? null : item.label)}
+                  className="w-full flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-bold text-[#111111] hover:bg-[#F5FAFF] hover:text-[#1575B3] transition"
+                >
+                  <span>{item.label}</span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-[#5F6B7A] transition-transform duration-300 ${openMenu === item.label ? 'rotate-180' : ''}`}
+                  />
+                </button>
+                {openMenu === item.label && (
+                  <div className="pl-4 space-y-0.5 mt-0.5">
+                    {item.children.map((child) => (
+                      <button
+                        key={child.label}
+                        onClick={() => handleNavClick(child.id)}
+                        className="w-full text-left px-3.5 py-2.5 rounded-lg text-sm font-bold text-[#111111] hover:bg-[#F5FAFF] hover:text-[#1575B3] border border-transparent hover:border-[#DCEAF5] transition"
+                      >
+                        {child.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
@@ -152,8 +263,8 @@ export const Header: React.FC<HeaderProps> = ({
                 <span>{item.label}</span>
                 <ChevronRight className="w-4 h-4 text-[#5F6B7A]" />
               </button>
-            ))}
-          </div>
+            )
+          )}
         </div>
       )}
     </header>
