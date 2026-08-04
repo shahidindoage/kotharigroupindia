@@ -23,6 +23,11 @@ import { Home2 } from './components/Home2';
 import { Home3 } from './components/Home3';
 import { HomeCategories } from './components/HomeCategories';
 import { SectorSolutions } from './components/SectorSolutions';
+import { AboutKothari } from './components/AboutKothari';
+import { SustainabilitySection } from './components/SustainabilitySection';
+import { InvestorSection } from './components/InvestorSection';
+import { CareersSection } from './components/CareersSection';
+import { Home3Contact } from './components/Home3Contact';
 import { productsData } from './data/products';
 import { ProductItem } from './types';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
@@ -129,6 +134,9 @@ function AppShell({
           onOpenQuoteModal={() => setQuoteModalOpen(true)}
         /> */}
 
+        {/* 1b. About Kothari Section */}
+        <AboutKothari variant="blue" />
+
         {/* 2. Our Product Categories Section */}
         <HomeCategories />
 
@@ -162,13 +170,32 @@ function AppShell({
         <KnowledgeCentre />
 
         {/* 6. News & Articles Section */}
-        <NewsAndArticles />
+        
 
         {/* 7. Testimonials Section */}
-        <Testimonials />
+        {/* <Testimonials /> */}
 
         {/* 8. Latest Blog Posts Section */}
-        <LatestBlogPosts />
+        {/* <LatestBlogPosts /> */}
+
+        {/* 8b. Solutions For Every Sector (marquee) */}
+        <SectorSolutions />
+
+        {/* 9. Sustainability Section */}
+        <SustainabilitySection variant="blue" />
+
+        {/* 10. Investor Section */}
+        <InvestorSection variant="blue" />
+
+        {/* 11. Careers Section */}
+        <CareersSection variant="blue" />
+
+        <NewsAndArticles />
+
+        
+
+        {/* 12. Contact Us Section */}
+        <Home3Contact variant="blue" />
                 </>
               }
             />

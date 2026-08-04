@@ -11,6 +11,7 @@ import {
   Factory,
   ArrowRight
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const scrollToId = (id: string) => {
   const el = document.getElementById(id);
@@ -26,8 +27,8 @@ const aboutLinks = [
 ];
 
 const divisionLinks = [
-  { label: 'Agriculture Division', sub: 'Micro Irrigation', target: 'solutions', icon: Sprout, accent: 'text-[#1E8E3E] bg-[#EAF8EF]' },
-  { label: 'Pipe Division', sub: 'Agri Pipes, Plumbing Pipes & Fittings', target: 'solutions', icon: Factory, accent: 'text-[#1575B3] bg-[#F5FAFF]' }
+  { label: 'Agriculture Division', sub: 'Micro Irrigation', target: 'solutions', icon: Sprout, accent: 'text-[#1E8E3E] bg-[#EAF8EF]',url:'/home3' },
+  { label: 'Pipe Division', sub: 'Agri Pipes, Plumbing Pipes & Fittings', target: 'solutions', icon: Factory, accent: 'text-[#1575B3] bg-[#F5FAFF]' ,url:'/'}
 ];
 
 const supportLinks = [
@@ -38,15 +39,28 @@ const supportLinks = [
 ];
 
 const socials = [
-  { label: 'Facebook', icon: Facebook, hover: 'hover:bg-[#1877F2]' },
-  { label: 'LinkedIn', icon: Linkedin, hover: 'hover:bg-[#0A66C2]' },
-  { label: 'YouTube', icon: Youtube, hover: 'hover:bg-[#FF0000]' },
-  { label: 'Instagram', icon: Instagram, hover: 'hover:bg-[#DD2A7B]' }
+  { label: 'Facebook', icon: Facebook, hover: 'hover:bg-[#1877F2]',url:'https://www.facebook.com/share/1A8KDDBqTx/?mibextid=wwXIfr' },
+  { label: 'LinkedIn', icon: Linkedin, hover: 'hover:bg-[#0A66C2]',url:'https://www.linkedin.com/company/kotharigroupindia/' },
+  { label: 'YouTube', icon: Youtube, hover: 'hover:bg-[#FF0000]',url:'https://www.youtube.com/@kotharipipesplumbing' },
+  { label: 'Instagram', icon: Instagram, hover: 'hover:bg-[#DD2A7B]',url:'https://www.instagram.com/kotharigroup_?igsh=MzJ0Ympyb3VoYmk1&utm_source=qr' }
 ];
 
-export const Home2Footer: React.FC = () => {
+export const Home2Footer: React.FC<{ variant?: 'blue' | 'green' }> = ({ variant = 'blue' }) => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+
+  const green = variant === 'green';
+
+  const newsCard = green
+    ? 'bg-[#F2FBF4] border-[#BFE4CC]'
+    : 'bg-[#F5FAFF] border-[#DCEAF5]';
+  const newsHeading = green ? 'text-[#0F6B2B]' : 'text-[#1575B3]';
+  const newsInput = green
+    ? 'border-[#BFE4CC] focus:ring-[#1E8E3E]/30'
+    : 'border-[#DCEAF5] focus:ring-[#1575B3]/30';
+  const newsBtn = green
+    ? 'bg-[#1E8E3E] hover:bg-[#0F6B2B]'
+    : 'bg-[#1575B3] hover:bg-[#0E588A]';
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,9 +77,9 @@ export const Home2Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
 
         {/* Newsletter */}
-        <div className="bg-[#F5FAFF] rounded-lg border border-[#DCEAF5] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xs">
+        <div className={`rounded-lg border p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xs ${newsCard}`}>
           <div className="space-y-1.5 max-w-xl">
-            <h3 className="text-xl sm:text-2xl font-medium text-[#1575B3]">
+            <h3 className={`text-xl sm:text-2xl font-medium ${newsHeading}`}>
               Subscribe To Kothari Group Updates
             </h3>
             <p className="text-xs font-light text-[#5F6B7A]">
@@ -80,11 +94,11 @@ export const Home2Footer: React.FC = () => {
               placeholder="Enter your email address..."
               value={newsletterEmail}
               onChange={(e) => setNewsletterEmail(e.target.value)}
-              className="px-4 py-3 bg-[#FFFFFF] border border-[#DCEAF5] rounded-lg text-xs font-light text-[#111111] placeholder-[#5F6B7A] focus:outline-none focus:ring-2 focus:ring-[#1575B3]/30 w-full lg:w-64"
+              className={`px-4 py-3 bg-[#FFFFFF] border rounded-lg text-xs font-light text-[#111111] placeholder-[#5F6B7A] focus:outline-none focus:ring-2 w-full lg:w-64 ${newsInput}`}
             />
             <button
               type="submit"
-              className="bg-[#1575B3] hover:bg-[#0E588A] text-white px-5 py-3 rounded-lg font-medium text-xs shadow-sm transition shrink-0"
+              className={`text-white px-5 py-3 rounded-lg font-medium text-xs shadow-sm transition shrink-0 ${newsBtn}`}
             >
               {subscribed ? 'Subscribed!' : 'Subscribe'}
             </button>
@@ -118,8 +132,9 @@ export const Home2Footer: React.FC = () => {
                 return (
                   <a
                     key={s.label}
-                    href="#home2-footer"
-                    onClick={(e) => e.preventDefault()}
+                    href={s.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
                     aria-label={s.label}
                     className={`w-9 h-9 rounded-lg bg-[#F5FAFF] border border-[#DCEAF5] text-[#1575B3] flex items-center justify-center transition-all hover:text-white hover:shadow-md ${s.hover}`}
                   >
@@ -152,7 +167,8 @@ export const Home2Footer: React.FC = () => {
                 const Icon = link.icon;
                 return (
                   <li key={link.label}>
-                    <button
+                    <Link
+                      to={link.url}
                       onClick={() => scrollToId(link.target)}
                       className="flex items-start gap-2 text-left hover:text-[#1575B3] transition group"
                     >
@@ -163,7 +179,7 @@ export const Home2Footer: React.FC = () => {
                         <span className="block font-medium text-[#111111] group-hover:text-[#1575B3] transition">{link.label}</span>
                         <span className="block text-[11px] font-light text-[#5F6B7A]">{link.sub}</span>
                       </span>
-                    </button>
+                    </Link>
                   </li>
                 );
               })}
@@ -191,19 +207,19 @@ export const Home2Footer: React.FC = () => {
               <li className="flex items-start gap-2.5">
               
                 <span className="leading-relaxed">
-                  Kothari Group, Kothari House, 4th Floor, Mumbai – Pune Road, Pune – 411 036, India
+                  8516/11, Level 3,Sun Plaza, Subhash Chowk, Murarji Peth, Solapur - 413 001. Maharashtra.
                 </span>
               </li>
               <li className="flex items-start gap-2.5">
                
                 <a href="tel:+9120" className="hover:text-[#1575B3] transition">
-                  +91 20 XXXX XXXX
+                  +91 1800 120 4343
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
               
                 <a href="mailto:info@kotharigroup.com" className="hover:text-[#1575B3] transition break-all">
-                  info@kotharigroup.com
+                  enquiry@kotharigroupindia.com
                 </a>
               </li>
             </ul>

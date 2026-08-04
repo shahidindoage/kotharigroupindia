@@ -9,7 +9,7 @@ interface MenuItem {
 
 const menu: MenuItem[] = [
   { id: 'home', label: 'Home' },
-  { id: 'why', label: 'About Us' },
+  { id: 'about-us', label: 'About Us' },
   {
     id: 'products',
     label: 'Solutions',
@@ -34,18 +34,18 @@ const menu: MenuItem[] = [
     ]
   },
   {
-    id: 'blog',
+    id: 'news',
     label: 'Resources',
     children: [
-      { id: 'blog', label: 'Blog' },
+      { id: 'news', label: 'Blog' },
       { id: 'news', label: 'Videos' },
       { id: 'news', label: 'Case Studies' },
       { id: 'callouts', label: 'Subsidy Info' },
-      { id: 'home2-footer', label: 'Downloads' }
+      { id: 'contact-us', label: 'Downloads' }
     ]
   },
   { id: 'callouts', label: 'Dealer Locator' },
-  { id: 'home2-footer', label: 'Contact Us' }
+  { id: 'contact-us', label: 'Contact Us' }
 ];
 
 const scrollToId = (id: string) => {
@@ -63,7 +63,7 @@ export const Home3Header: React.FC = () => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
   useEffect(() => {
-    const ids = ['why', 'products', 'crops', 'blog', 'callouts'];
+    const ids = ['about-us', 'products', 'crops', 'news', 'callouts'];
     const onScroll = () => {
       const pos = window.scrollY + 180;
       let current = 'home';
@@ -166,7 +166,7 @@ export const Home3Header: React.FC = () => {
 
           {/* Enquire Now Button */}
           <button
-            onClick={() => handleNav('home2-footer')}
+            onClick={() => handleNav('contact-us')}
             className="hidden xl:inline-flex items-center gap-2 bg-[#1E8E3E] hover:bg-[#0F6B2B] text-white px-5 py-2.5 rounded-xl text-sm font-medium shadow-md shadow-[#1E8E3E]/15 hover:shadow-lg transition-all"
           >
             Enquire Now

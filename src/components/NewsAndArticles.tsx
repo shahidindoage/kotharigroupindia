@@ -6,19 +6,16 @@ type Variant = 'blue' | 'green';
 export const NewsAndArticles: React.FC<{ variant?: Variant }> = ({ variant = 'blue' }) => {
   const t = variant === 'green'
     ? {
-       
-
-
-          section: 'bg-[#F5FAFF] border-[#DCEAF5]',
-      heading: 'text-[#1E8E3E]',
-        chip: 'bg-[#F5FAFF] border-[#DCEAF5] text-[#1575B3]',
-        imgWrap: 'bg-[#F5FAFF] border-[#DCEAF5]',
-        link: 'text-[#1575B3]',
-        card: 'border-[#DCEAF5]',
-        divider: 'border-[#DCEAF5]'
+        section: 'bg-gradient-to-br from-[#F2FBF4] via-[#FFFFFF] to-[#EAF8EF]',
+        heading: 'text-[#1E8E3E]',
+        chip: 'bg-[#EAF8EF] border-[#BFE4CC] text-[#1E8E3E]',
+        imgWrap: 'bg-[#F2FBF4] border-[#BFE4CC]',
+        link: 'text-[#1E8E3E]',
+        card: 'border-[#BFE4CC]',
+        divider: 'border-[#BFE4CC]'
       }
     : {
-        section: 'bg-[#F5FAFF] border-[#DCEAF5]',
+        section: 'bg-gradient-to-br from-[#F5FAFF] via-[#FFFFFF] to-[#E8F2FA]',
         heading: 'text-[#1575B3]',
         chip: 'bg-[#F5FAFF] border-[#DCEAF5] text-[#1575B3]',
         imgWrap: 'bg-[#F5FAFF] border-[#DCEAF5]',
@@ -52,7 +49,7 @@ export const NewsAndArticles: React.FC<{ variant?: Variant }> = ({ variant = 'bl
   ];
 
   return (
-    <section id="news" className={`py-16 border-b text-left ${t.section}`}>
+    <section id="news" className={`py-16 text-left  ${t.section}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
         
         {/* Header */}
@@ -60,7 +57,7 @@ export const NewsAndArticles: React.FC<{ variant?: Variant }> = ({ variant = 'bl
           <div className="space-y-2">
           
             <h2 className={`text-3xl sm:text-4xl font-medium ${t.heading}`}>
-              News & Articles
+              News & Media
             </h2>
             <p className="text-sm font-light text-[#5F6B7A]">
               Stay informed with latest Kothari Group press releases, factory expansions, and industry recognitions.
