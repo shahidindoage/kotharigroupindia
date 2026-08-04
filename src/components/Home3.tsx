@@ -68,22 +68,22 @@ const scrollToId = (id: string) => {
 };
 
 const categories = [
-  { num: '01', title: 'Drip Irrigation', description: 'Efficient drip systems that deliver water directly to the root zone.', image: 'https://images.pexels.com/photos/11679735/pexels-photo-11679735.jpeg' },
-  { num: '02', title: 'Sprinkler Irrigation', description: 'Uniform water distribution for wide-area coverage.', image: 'https://kotharigroupindia.com/img/images/Agri_Pipes.webp' },
-  { num: '03', title: 'Filters', description: 'Remove impurities and protect your drippers and emitters.', image: 'https://kotharigroupindia.com/img/images/Building_pipe.webp' },
-  { num: '04', title: 'Fertigation', description: 'Precise nutrient application through the irrigation system.', image: 'https://images.pexels.com/photos/11679735/pexels-photo-11679735.jpeg' },
-  { num: '05', title: 'Crop Solutions', description: 'Tailored irrigation designs for specific crops.', image: 'https://kotharigroupindia.com/img/images/Agri_Pipes.webp' },
-  { num: '06', title: 'Accessories', description: 'Fittings, valves and components for a complete system.', image: 'https://images.pexels.com/photos/11679735/pexels-photo-11679735.jpeg' }
+  { num: '01', title: 'Drip Irrigation', description: 'Efficient drip systems that deliver water directly to the root zone.', image: 't1.jpg' },
+  { num: '02', title: 'Sprinkler Irrigation', description: 'Uniform water distribution for wide-area coverage.', image: 't2.jpg' },
+  { num: '03', title: 'Filters', description: 'Remove impurities and protect your drippers and emitters.', image: 't3.jpg' },
+  { num: '04', title: 'Fertigation', description: 'Precise nutrient application through the irrigation system.', image: 't4.jpg' },
+  { num: '05', title: 'Crop Solutions', description: 'Tailored irrigation designs for specific crops.', image: 't7.jpg' },
+  { num: '06', title: 'Accessories', description: 'Fittings, valves and components for a complete system.', image: 'https://kotharigroupindia.com/img/images/Agri_Pipes.webp' }
 ];
 
 const FIELD_IMAGE = 'https://images.pexels.com/photos/11679735/pexels-photo-11679735.jpeg';
 
 const crops = [
-  { num: '01', name: 'Sugarcane', description: 'Water-efficient ratoon management for higher sugar recovery.', image: 'https://images.pexels.com/photos/37753396/pexels-photo-37753396.jpeg' },
-  { num: '02', name: 'Banana', description: 'Uniform soil moisture for strong, healthy bunches.', image: 'https://images.pexels.com/photos/37182860/pexels-photo-37182860.jpeg' },
-  { num: '03', name: 'Pomegranate', description: 'Drip schedules that prevent fruit cracking.', image: 'https://images.pexels.com/photos/4021844/pexels-photo-4021844.jpeg' },
-  { num: '04', name: 'Grapes', description: 'Precise fertigation for premium vineyard quality.', image: 'https://images.pexels.com/photos/4332365/pexels-photo-4332365.jpeg' },
-  { num: '05', name: 'Vegetables', description: 'Steady irrigation for faster, cleaner harvests.', image: 'https://images.pexels.com/photos/4021844/pexels-photo-4021844.jpeg' }
+  { num: '01', name: 'Sugarcane', description: 'Water-efficient ratoon management for higher sugar recovery.', image: '/food1.jpg' },
+  { num: '02', name: 'Banana', description: 'Uniform soil moisture for strong, healthy bunches.', image: '/food2.jpg' },
+  { num: '03', name: 'Pomegranate', description: 'Drip schedules that prevent fruit cracking.', image: '/food3.jpg' },
+  { num: '04', name: 'Grapes', description: 'Precise fertigation for premium vineyard quality.', image: '/food4.jpg' },
+  { num: '05', name: 'Vegetables', description: 'Steady irrigation for faster, cleaner harvests.', image: '/food7.jpg' }
 ];
 
 const benefits = [
@@ -148,7 +148,7 @@ export const Home3: React.FC = () => {
       ============================================================ */}
       <section id="products" className="py-16 sm:py-20 bg-[#F5FAFF] border-b border-[#DCEAF5] scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12">
-          <Reveal className="text-center max-w-2xl mx-auto space-y-4">
+          <div className="text-center max-w-2xl mx-auto space-y-4">
             <SectionLabel icon={Sprout}>Product Categories</SectionLabel>
             <h2 className="text-3xl sm:text-4xl font-medium text-[#0F6B2B]">
               Complete Micro Irrigation Range
@@ -156,11 +156,11 @@ export const Home3: React.FC = () => {
             <p className="text-sm font-light text-[#5F6B7A]">
               Everything you need to irrigate smarter, from source to root zone.
             </p>
-          </Reveal>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {/* LEFT: Category Tabs */}
-            <Reveal className="space-y-3">
+            <div className="space-y-3">
               {categories.map((cat, idx) => {
                 const active = idx === activeCategory;
                 return (
@@ -205,13 +205,12 @@ export const Home3: React.FC = () => {
                       </div>
                     </div>
                   </button>
-                );
-              })}
-            </Reveal>
+              );
+            })}
+            </div>
 
             {/* RIGHT: Image Preview */}
-            <Reveal delay={100}>
-              <div className="relative h-80 lg:h-full min-h-[24rem] rounded-lg overflow-hidden border border-[#DCEAF5] shadow-xl shadow-[#1575B3]/10">
+            <div className="relative h-80 lg:h-full min-h-[24rem] rounded-lg overflow-hidden border border-[#DCEAF5] shadow-xl shadow-[#1575B3]/10">
                 <img
                   key={activeCategory}
                   src={categories[activeCategory].image}
@@ -250,7 +249,6 @@ export const Home3: React.FC = () => {
                   </button>
                 </div>
               </div>
-            </Reveal>
           </div>
         </div>
       </section>

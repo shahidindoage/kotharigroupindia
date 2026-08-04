@@ -27,15 +27,7 @@ export const LatestBlogPosts: React.FC<{ variant?: Variant }> = ({ variant = 'bl
       };
 
   const blogs = [
-    {
-      title: 'How Micro Irrigation Boosts Crop Yield By 40% With 50% Less Water',
-      author: 'Dr. A. K. Deshmukh',
-      role: 'Agri Water Specialist',
-      readTime: '5 min read',
-      category: 'Micro Irrigation',
-      snippet: 'Discover the science behind targeted root-zone drip irrigation, fertigation nutrient uptake, and preventing evaporation losses in arid farmland.',
-      image: 'https://kotharigroupindia.com/img/images/Agri_Pipes.webp'
-    },
+   
     {
       title: 'CPVC vs. UPVC: Choosing The Right Plumbing Pipe For Your Building',
       author: 'Er. Nitin Verma',
@@ -44,6 +36,15 @@ export const LatestBlogPosts: React.FC<{ variant?: Variant }> = ({ variant = 'bl
       category: 'Plumbing Systems',
       snippet: 'An engineering comparison of temperature thresholds, working pressure SDR ratings, chemical resistance, and solvent welding best practices.',
       image: 'https://kotharigroupindia.com/img/images/Building_pipe.webp'
+    },
+     {
+      title: 'How Micro Irrigation Boosts Crop Yield By 40% With 50% Less Water',
+      author: 'Dr. A. K. Deshmukh',
+      role: 'Agri Water Specialist',
+      readTime: '5 min read',
+      category: 'Micro Irrigation',
+      snippet: 'Discover the science behind targeted root-zone drip irrigation, fertigation nutrient uptake, and preventing evaporation losses in arid farmland.',
+      image: 'https://images.pexels.com/photos/11679735/pexels-photo-11679735.jpeg'
     },
     {
       title: 'Preventing Borewell Column Failure: Submersible Pipe Installation Rules',

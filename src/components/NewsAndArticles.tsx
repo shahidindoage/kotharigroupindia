@@ -33,7 +33,7 @@ export const NewsAndArticles: React.FC<{ variant?: Variant }> = ({ variant = 'bl
       date: 'July 18, 2026',
       category: 'Corporate Growth',
       snippet: 'Inauguration of a new high-speed LLDPE drip tube extrusion line with state-of-the-art laser perforation technology to meet growing demand across 23+ Indian states.',
-      image: 'https://kotharigroupindia.com/img/images/Irrigation_products.webp'
+      image: 'https://images.pexels.com/photos/11679735/pexels-photo-11679735.jpeg'
     },
     {
       title: 'Recognition at National Water Conservation Excellence Summit',
